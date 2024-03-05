@@ -1,9 +1,14 @@
 import React from 'react'
+import HtmlPage from '../Html/HtmlPage'
 
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+  <HtmlPage />
+
+
+    </div>
   )
 }
 
