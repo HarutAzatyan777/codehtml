@@ -16,11 +16,11 @@
 
 
 .logo-container {
-  /* Add any styling for the logo container */
+  max-height: 200px;
 }
 
 .logo {
-  width: 100px; /* Adjust the width of the logo */
+  width: 300px; /* Adjust the width of the logo */
   height: auto;
   color: #000;
 }

@@ -1,0 +1,30 @@
+/* HTMLCourses.css */
+
+.container-courses {
+   
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .container-courses h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .container-courses p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .container-courses ul {
+    margin-top: 300px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .container-courses li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+  

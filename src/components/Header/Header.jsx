@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 import './Header.css'; // Import your CSS file for styling
@@ -6,20 +6,30 @@ import './Header.css'; // Import your CSS file for styling
 const Header = ({ currentLanguage, onLanguageSwitch }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-
-
-
-  
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  
+  // Function to close mobile menu when clicking outside of it
+  const closeMobileMenu = () => {
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    // Attach click event listener to the document body
+    document.body.addEventListener('click', closeMobileMenu);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.body.removeEventListener('click', closeMobileMenu);
+    };
+  }, [mobileMenuOpen]); // Re-run effect when mobileMenuOpen state changes
 
   return (
-    
     <header className={`main-header ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-    <div className="logo-container">
+      <div className="logo-container">
         <NavLink to="/">
           <img src="Logo.png" alt="Logo" className="logo" />
         </NavLink>
@@ -30,45 +40,34 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
           <div className="bar"></div>
           <div className="bar"></div>
         </div>
-
-         
         <ul>
-
           <li>
-            <ScrollLink to="products" smooth={true} duration={500}>
-             HTML
-            </ScrollLink>
+            <NavLink to="/HtmlPage">HTML</NavLink>
           </li>
           <li>
-            <ScrollLink to="aboute" smooth={true} duration={500}>
-            CSS
-            </ScrollLink>
+            <NavLink to="/HTMLCourses">HTMLCourses</NavLink>
           </li>
+          
           <li className="dropdown">
             <ScrollLink to="Features" smooth={true} duration={500}>
               ICON
             </ScrollLink>
             <div className="dropdown-content">
-              {/* Dropdown menu items */}
               <ScrollLink to="feature1" smooth={true} duration={500}>
                 SVG
               </ScrollLink>
               <ScrollLink to="feature2" smooth={true} duration={500}>
-              JSX
+                JSX
               </ScrollLink>
-            
             </div>
           </li>
-          
           <li>
             <ScrollLink to="priceplans" smooth={true} duration={500}>
-            Fonts
+              Fonts
             </ScrollLink>
           </li>
           <li>
-            <NavLink to="/resources">
-              Resources
-            </NavLink>
+            <NavLink to="/resources">Resources</NavLink>
           </li>
           <li>
             <ScrollLink to="login" smooth={true} duration={500}>
@@ -80,12 +79,10 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
               Get Started
             </ScrollLink>
           </li>
-             
- 
-      <label htmlFor="toggleSwitch" className="switch">
-        <span className="on">En</span>
-        <span className="off">Am</span>
-      </label>
+          <label htmlFor="toggleSwitch" className="switch">
+            <span className="on">En</span>
+            <span className="off">Am</span>
+          </label>
         </ul>
       </nav>
     </header>

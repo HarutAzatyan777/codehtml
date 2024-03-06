@@ -1,5 +1,3 @@
-// HtmlPage.jsx
-
 import React, { useState } from 'react';
 import TagInfoPanel from './TagInfoPanel';
 import './HtmlPage.css';
@@ -8,11 +6,12 @@ const HtmlPage = () => {
   const [sections, setSections] = useState({
     alphabet: false,
     category: false,
-    tags: false,
+    tags: true,
     // Add more sections as needed
   });
 
   const [selectedTag, setSelectedTag] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const toggleSection = (section) => {
     setSections((prevSections) => ({
@@ -130,7 +129,7 @@ const HtmlPage = () => {
     '<summary>',
     '<sup>',
     '<svg>',
-    '<table>',
+    '<table>', // Checkered pattern could be created with a table
     '<tbody>',
     '<td>',
     '<template>',
@@ -150,20 +149,34 @@ const HtmlPage = () => {
     '<wbr>',
   ];
 
+  // Function to filter HTML tags based on the search term
+  const filteredHtmlTags = htmlTags.filter(tag =>
+    tag.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Function to handle changes in the search input
+  const handleSearchInputChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <div className="container">
       <div className="section-content">
         <h1>HTML References</h1>
 
-        {/* Include the rest of your sections and content here... */}
+        <input
+          type="text"
+          placeholder="Search HTML tags..."
+          value={searchTerm}
+          onChange={handleSearchInputChange}
+        />
 
-        {/* Include the HTML Tags section */}
         <h2 onClick={() => toggleSection('tags')}>HTML Tags</h2>
         {sections.tags && (
           <div className="section-content">
-            {/* Include HTML tags with their descriptions here */}
+            {/* Display filtered HTML tags */}
             <ul>
-              {htmlTags.map((tag, index) => (
+              {filteredHtmlTags.map((tag, index) => (
                 <li key={index} onClick={() => showTagInfo(tag)}>
                   {tag}
                 </li>
@@ -172,7 +185,6 @@ const HtmlPage = () => {
           </div>
         )}
 
-        {/* Include the rest of your sections and content here... */}
       </div>
 
       {/* Always display the TagInfoPanel */}
