@@ -47,6 +47,10 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
           <li>
             <NavLink to="/HTMLCourses">HTMLCourses</NavLink>
           </li>
+
+          <li>
+            <NavLink to="/Color">Color</NavLink>
+          </li>
           
           <li className="dropdown">
             <ScrollLink to="Features" smooth={true} duration={500}>

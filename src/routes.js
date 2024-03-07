@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import HtmlPage from './pages/Html/HtmlPage';
 import HTMLCourses from './pages/Courses/HTMLCourses'; 
+import ColorGenerator from './pages/ColorGenerator/ColorGenerator'
 
 const RoutesConfig = () => {
   return (
@@ -12,6 +13,7 @@ const RoutesConfig = () => {
       <Route path="/" element={<Home />} />
       <Route path="/HtmlPage" element={<HtmlPage />} /> 
       <Route path="/HtmlCourses" element={<HTMLCourses />} />
+      <Route path="/Color" element={<ColorGenerator />} />
     </Routes>
   );
 };

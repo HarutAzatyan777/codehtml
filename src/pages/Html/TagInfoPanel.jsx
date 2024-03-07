@@ -1,44 +1,286 @@
 // TagInfoPanel.jsx
 
-import React from 'react';
+import React,{useState} from 'react';
 import './TagInfoPanel.css'; // Import the CSS file
 
 const TagInfoPanel = ({ selectedTag }) => {
+
+    
+      const [isCopied, setIsCopied] = useState(false);
+    
+
+
   const getTagInfo = (tag) => {
     switch (tag) {
-      case '<!-->':
-        return (
-          <div>
-            <p>This is a comment. Comments are not displayed in the browser.</p>
-            <p>
-              To add comments to your HTML code, use the syntax:
-              <br />
-              <code>{'<!-- Your comment here -->'}</code>
-            </p>
-          </div>
-        );
-      case '<!DOCTYPE>':
-        return (
-          <div>
-            <p>
-              This declaration defines the document type and version of HTML.
-            </p>
-            <p>
-              Ensure it's placed at the very beginning of your HTML document:
-              <br />
-              <code>{'<!DOCTYPE html>'}</code>
-            </p>
-          </div>
-        );
-        case '<a>':
-          // Return JSX explaining the anchor tag and providing an example
-          return (
+        case '<!-->':
+            return (
               <div>
-                  <p>This is an anchor tag used to create hyperlinks.</p>
-                  <p>Example:</p>
-                  <p>{'<a href="https://example.com">Link Text</a>'}</p>
+                <p>This is a comment. Comments are not displayed in the browser.</p>
+                <p>
+                  To add comments to your HTML code, use the syntax:
+                  <br />
+                  <code>{'<!-- Your comment here -->'}</code>
+                </p>
+                <p>
+                  <strong>Definition and Usage:</strong>
+                  <br />
+                  The comment tag is used to insert comments in the source code. Comments are not displayed in the browsers.
+                  <br />
+                  You can use comments to explain your code, which can help you when you edit the source code at a later date. This is especially useful if you have a lot of code.
+                </p>
+                <p>
+                  <strong>Browser Support:</strong>
+                  <br />
+                  <strong>Browser Support:</strong>
+        <br />
+        <table>
+          <tr>
+            <th>Element</th>
+            <th>&lt;!--...--&gt;</th>
+            <th>Chrome</th>
+            <th>Mozilla</th>
+            <th>Opera</th>
+            <th>Safari</th>
+            <th>Edge</th>
+          </tr>
+          <tr>
+            <td>&lt;!--...--&gt;</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+                </p>
+                <p>
+                  <strong>Tips and Notes:</strong>
+                  <br />
+                  You can use the comment tag to "hide" scripts from browsers without support for scripts (so they don't show them as plain text):
+                  <br />
+                  <code>
+                    {'<script type="text/javascript">'}
+                    <br />
+                    {'<!--'}
+                    <br />
+                    {'function displayMsg() {'}
+                    <br />
+                    {'  alert("Hello World!");'}
+                    <br />
+                    {'}'}
+                    <br />
+                    {'//-->'}
+                    <br />
+                    {'</script>'}
+                  </code>
+                  <br />
+                  Note: The two forward slashes at the end of the comment line (//) are the JavaScript comment symbols. This prevents JavaScript from executing the --&gt; tag.
+                </p>
               </div>
-          );
+            );
+          
+        case '<!DOCTYPE>':
+            const codeExample = `<!DOCTYPE html>
+            <html>
+            <head>
+              <title>Title of the document</title>
+            </head>
+            <body>
+              The content of the document......
+            </body>
+            </html>`;
+            const handleCopyCode = () => {
+                navigator.clipboard.writeText(codeExample);
+                setIsCopied(true);
+                setTimeout(() => setIsCopied(false), 2000);
+              };
+            return (
+                <div>
+                <p>
+                  This declaration defines the document type and version of HTML.
+                </p>
+                <p>
+                  Ensure it's placed at the very beginning of your HTML document:
+                  <br />
+                  <code>{'<!DOCTYPE html>'}</code>
+                  <button onClick={handleCopyCode}>
+                    {isCopied ? 'Copied!' : 'Copy Code'}
+                  </button>
+                </p>
+                <p>
+                  <strong>Example:</strong>
+                  <br />
+                  <code>{codeExample}</code>
+                  <button onClick={handleCopyCode}>
+                    {isCopied ? 'Copied!' : 'Copy Code'}
+                  </button>
+                </p>
+                <p>
+                  <strong>Definition and Usage:</strong>
+                  <br />
+                  All HTML documents must start with a <code>{'<!DOCTYPE>'}</code> declaration.
+                  <br />
+                  The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.
+                  <br />
+                  In HTML 5, the declaration is simple: <code>{'<!DOCTYPE html>'}</code>
+                </p>
+                <p>
+                  <strong>Browser Support:</strong>
+                  <br />
+                  <strong>Browser Support:</strong>
+        <br />
+        <table>
+          <tr>
+            <th>Element</th>
+            <th>&lt;!--...--&gt;</th>
+            <th>Chrome</th>
+            <th>Mozilla</th>
+            <th>Opera</th>
+            <th>Safari</th>
+            <th>Edge</th>
+          </tr>
+          <tr>
+            <td>&lt;!--...--&gt;</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+                </p>
+                <p>
+                  <strong>Older HTML Documents:</strong>
+                  <br />
+                  In older documents (HTML 4 or XHTML), the declaration is more complicated because the declaration must refer to a DTD (Document Type Definition).
+                  <br />
+                  HTML 4.01: <code>{'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">'}</code>
+                  <br />
+                  XHTML 1.1: <code>{'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">'}</code>
+                </p>
+                <p>
+                  <strong>HTML Elements and Doctypes:</strong>
+                  <br />
+                  Look at our table of all HTML elements, and what Doctype each element appears in.
+                </p>
+                <p>
+                  <strong>Tips and Notes:</strong>
+                  <br />
+                  Tip: The <code>{'<!DOCTYPE>'}</code> declaration is NOT case sensitive.
+                </p>
+                <p>
+                  <strong>Examples:</strong>
+                  <br />
+                  <code>{'<!DOCTYPE html>'}</code>
+                  <br />
+                  <code>{'<!DocType html>'}</code>
+                  <br />
+                  <code>{'<!Doctype html>'}</code>
+                  <br />
+                  <code>{'<!doctype html>'}</code>
+                </p>
+              </div>
+            );
+          
+            case '<a>':
+                // Return JSX explaining the anchor tag and providing an example
+                return (
+                  <div>
+                    <p>
+                      The <code>&lt;a&gt;</code> tag defines a hyperlink, which is used to link from one page to another.
+                    </p>
+                    <p>
+                      The most important attribute of the <code>&lt;a&gt;</code> element is the <code>href</code> attribute, which indicates the link's destination.
+                    </p>
+                    <p>
+                      By default, links will appear as follows in all browsers:
+                      <br />
+                      - An unvisited link is underlined and blue.
+                      <br />
+                      - A visited link is underlined and purple.
+                      <br />
+                      - An active link is underlined and red.
+                    </p>
+                    <p>
+                      <strong>Definition and Usage:</strong>
+                      <br />
+                      The <code>&lt;a&gt;</code> tag defines a hyperlink, which is used to link from one page to another.
+                      <br />
+                      The most important attribute of the <code>&lt;a&gt;</code> element is the <code>href</code> attribute, which indicates the link's destination.
+                    </p>
+                    <p>
+                      <strong>Browser Support:</strong>
+                      <br />
+                      <strong>Browser Support:</strong>
+        <br />
+        <table>
+          <tr>
+            <th>Element</th>
+            <th>&lt;!--...--&gt;</th>
+            <th>Chrome</th>
+            <th>Mozilla</th>
+            <th>Opera</th>
+            <th>Safari</th>
+            <th>Edge</th>
+          </tr>
+          <tr>
+            <td>&lt;!--...--&gt;</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+                    </p>
+                    <p>
+                      <strong>Attributes:</strong>
+                      <br />
+                      <table>
+                        <tr>
+                          <th>Attribute</th>
+                          <th>Value</th>
+                          <th>Description</th>
+                        </tr>
+                        <tr>
+                          <td>download</td>
+                          <td>filename</td>
+                          <td>Specifies that the target will be downloaded when a user clicks on the hyperlink</td>
+                        </tr>
+                        <tr>
+                          <td>href</td>
+                          <td>URL</td>
+                          <td>Specifies the URL of the page the link goes to</td>
+                        </tr>
+                        <tr>
+                          <td>hreflang</td>
+                          <td>language_code</td>
+                          <td>Specifies the language of the linked document</td>
+                        </tr>
+                       {' <!-- Add the rest of the attribute information here -->'}
+                      </table>
+                    </p>
+                    <p>
+                      <strong>Global Attributes:</strong>
+                      <br />
+                      The <code>&lt;a&gt;</code> tag also supports the Global Attributes in HTML.
+                    </p>
+                    <p>
+                      <strong>Event Attributes:</strong>
+                      <br />
+                      The <code>&lt;a&gt;</code> tag also supports the Event Attributes in HTML.
+                    </p>
+                    <p>
+                      <strong>Example:</strong>
+                      <br />
+                      <code>{'<a href="https://example.com">Link Text</a>'}</code>
+                    </p>
+                  </div>
+                );
+              
       
       case '<abbr>':
           // Return JSX explaining the abbreviation tag and providing an example

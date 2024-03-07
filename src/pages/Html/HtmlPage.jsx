@@ -157,6 +157,8 @@ const HtmlPage = () => {
   // Function to handle changes in the search input
   const handleSearchInputChange = (event) => {
     setSearchTerm(event.target.value);
+
+
   };
 
   return (
@@ -187,7 +189,7 @@ const HtmlPage = () => {
 
       </div>
 
-      {/* Always display the TagInfoPanel */}
+   
       <div className="side-panel">
         <TagInfoPanel selectedTag={selectedTag} />
       </div>
