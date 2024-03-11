@@ -1,9 +1,118 @@
 /* Home.css */
 
 .home-container {
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto;
-    padding: 20px;
-    margin-top: 200px;
+  margin: 0 auto;
+}
+
+/* Style for the container div */
+.html-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+}
+
+/* Style for the welcome message and image container */
+.welcome {
+  padding: 70px ; /* Reduced padding for smaller screens */
+  text-align: start; /* Center align for smaller screens */
+  display: flex;
+  flex-direction: column; /* Default direction: row */
+  align-items: flex-start;
+}
+
+/* Style for the heading */
+.welcome h1 {
+  font-size: 52px; /* Decreased font size for smaller screens */
+}
+
+/* Style for the paragraph */
+.welcome p {
+  font-size: 32px; /* Decreased font size for smaller screens */
+  line-height: 1.5;
+}
+
+/* Style for the image */
+.welcome-img {
+  width: 40%; /* Reduced width for smaller screens */
+  height: auto;
+  margin-bottom: 20px; /* Add spacing between image and text */
+}
+
+
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .welcome {
+      flex-direction: column; /* Change flex direction to column for smaller screens */
+      padding: 10px; /* Further reduced padding for smaller screens */
   }
-  
+  .welcome h1 {
+      font-size: 24px; /* Further decreased font size for smaller screens */
+  }
+  .welcome p {
+      font-size: 14px; /* Further decreased font size for smaller screens */
+  }
+  .welcome-img {
+      width: 100%; /* Full width for smaller screens */
+  }
+}
+
+
+
+/* Home.css */
+.html-home-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust as needed */
+}
+/* Style for the welcome message container */
+.welcome-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding: 20px;
+}
+
+/* Style for the heading */
+.welcome-2 h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Style for the list */
+.welcome-2 ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for list items */
+.welcome-2 li {
+  margin-bottom: 10px;
+}
+
+/* Style for strong text within list items */
+.welcome-2 li strong {
+  font-weight: bold;
+}
+
+/* Style for the image */
+.welcome-2-img {
+  width: 70%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .welcome-2 {
+      padding: 10px; /* Reduced padding for smaller screens */
+  }
+  .welcome-2 h2 {
+      font-size: 20px; /* Decreased font size for smaller screens */
+  }
+}
+
+

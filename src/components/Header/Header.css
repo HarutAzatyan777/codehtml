@@ -9,19 +9,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: #495565; /* Change the background color as needed */
+  background-color: #171674; /* Change the background color as needed */
   color: #fff; /* Change the text color as needed */
   z-index: 9999;
 }
 
 
 .logo-container {
-  max-height: 200px;
 }
 
 .logo {
-  width: 300px; /* Adjust the width of the logo */
-  height: auto;
+  height: 70px;
   color: #000;
 }
 
@@ -98,7 +96,7 @@
     position: absolute;
     top: 70px; /* Adjust the top spacing as needed */
     left: 0;
-    background-color: #495565; /* Change the background color as needed */
+    background-color: #171674; /* Change the background color as needed */
     z-index: 1;
     opacity: 0;
     visibility: hidden;
@@ -107,7 +105,7 @@
   }
 
   .main-header.mobile-menu-open {
-    background-color: #495565; /* Change the background color when the mobile menu is open */
+    background-color: #171674; /* Change the background color when the mobile menu is open */
     /* Add any additional styles for the main header when the mobile menu is open */
   }
   

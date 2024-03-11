@@ -5,17 +5,31 @@ import './Home.css'; // Import the CSS file for styling
 const Home = () => {
   return (
     <div className="home-container">
+      <div className='html-home'>
+    
+      <div className='welcome'>
       <h1>Welcome to HTML School</h1>
       <p>At HTML School, we offer comprehensive courses designed to help you master HTML, the cornerstone of web development. Whether you're just starting or looking to enhance your skills, our expert instructors are here to guide you every step of the way.</p>
-      
-      <h2>Why Choose HTML School?</h2>
-      <ul>
+      </div>
+      <img src='html/school.web' alt='three' className='welcome-img' />
+      </div>
+
+<div className='html-home-2'>
+        <img src='html/html2.web' alt='three' className='welcome-2-img' />
+<div className='welcome-2'>
+<h2>Why Choose HTML School?</h2>
+<ul>
         <li><strong>Expert Instructors:</strong> Our instructors have years of experience in web development and are passionate about teaching.</li>
         <li><strong>Interactive Learning:</strong> Dive into hands-on projects and exercises that reinforce your understanding of HTML.</li>
         <li><strong>Flexible Learning:</strong> Choose from flexible learning options, including self-paced courses and live sessions.</li>
         <li><strong>Community Support:</strong> Join a supportive community of learners, where you can collaborate, share ideas, and grow together.</li>
         <li><strong>Career Opportunities:</strong> HTML skills are in high demand. Gain the knowledge you need to pursue exciting career opportunities in web development.</li>
       </ul>
+</div>
+
+</div>
+
+     
       
       <h2>Our Courses</h2>
       <ul>
