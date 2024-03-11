@@ -29,18 +29,21 @@ const Home = () => {
 
 </div>
 
-     
-      
-      <h2>Our Courses</h2>
+<div className='html-home-3'>
+<img src='html/html3.web' alt='html-tag' className='welcome-3-img' />
+  <div className='welcome-3'>
+<h2>Our Courses</h2>
       <ul>
         <li><strong>HTML Fundamentals:</strong> Master the basics of HTML, including tags, attributes, and document structure.</li>
         <li><strong>Advanced HTML Techniques:</strong> Learn advanced HTML techniques such as forms, multimedia embedding, and semantic markup.</li>
         <li><strong>HTML5 and Beyond:</strong> Explore the latest features of HTML5 and how to leverage them to create modern, responsive websites.</li>
         {/* Add more courses as needed */}
       </ul>
+  </div>
+
       
-      <h2>Enrollment Process</h2>
-      <p>Ready to start learning? Enroll in a course today! Simply browse our course catalog, select the course that interests you, and follow the enrollment instructions. If you have any questions, feel free to reach out to our team.</p>
+</div>
+    
 
     </div>
     

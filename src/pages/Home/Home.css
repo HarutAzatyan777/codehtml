@@ -1,72 +1,102 @@
 /* Home.css */
 
+/* Common styles for home containers */
 .home-container {
   margin: 0 auto;
 }
 
-/* Style for the container div */
 .html-home {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  flex-flow: row nowrap;
   align-items: center;
-  height: 100vh; /* Adjust as needed */
+  margin-top: 40px;
+
 }
+
+
+.html-home-2 {
+  display: flex;
+  justify-content: start;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.html-home-3 {
+  display: flex;
+  justify-content: start;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  /* Common styles for smaller screens */
+  .html-home,
+  .html-home-2,
+  html-home-3 {
+    display: flex;
+    justify-content: center;
+   flex-direction: column;
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    justify-items: center;
+  }
+  html-home-2 {
+    order: -1;
+  }
+
+}
+
+/* Style for the first section container */
+
 
 /* Style for the welcome message and image container */
 .welcome {
-  padding: 70px ; /* Reduced padding for smaller screens */
-  text-align: start; /* Center align for smaller screens */
+  padding: 70px; /* Default padding */
   display: flex;
-  flex-direction: column; /* Default direction: row */
+  flex-direction: column; /* Default direction */
   align-items: flex-start;
 }
 
 /* Style for the heading */
 .welcome h1 {
-  font-size: 52px; /* Decreased font size for smaller screens */
+  font-size: 52px;
 }
 
 /* Style for the paragraph */
 .welcome p {
-  font-size: 32px; /* Decreased font size for smaller screens */
+  font-size: 32px;
   line-height: 1.5;
 }
 
 /* Style for the image */
 .welcome-img {
-  width: 40%; /* Reduced width for smaller screens */
+  width: 40%;
   height: auto;
-  margin-bottom: 20px; /* Add spacing between image and text */
+  margin-bottom: 20px;
 }
-
-
 
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   .welcome {
-      flex-direction: column; /* Change flex direction to column for smaller screens */
-      padding: 10px; /* Further reduced padding for smaller screens */
+    padding: 10px; /* Reduced padding for smaller screens */
   }
   .welcome h1 {
-      font-size: 24px; /* Further decreased font size for smaller screens */
+    font-size: 24px; /* Decreased font size for smaller screens */
   }
   .welcome p {
-      font-size: 14px; /* Further decreased font size for smaller screens */
+    font-size: 14px; /* Decreased font size for smaller screens */
   }
   .welcome-img {
-      width: 100%; /* Full width for smaller screens */
+    width: 100%; /* Full width for smaller screens */
   }
 }
 
+/* Style for the second section container */
 
 
-/* Home.css */
-.html-home-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Adjust as needed */
-}
 /* Style for the welcome message container */
 .welcome-2 {
   display: flex;
@@ -105,14 +135,61 @@
   margin-top: 20px;
 }
 
+
+.welcome-3 {
+  display: flex;
+ flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding: 20px;
+
+}
+
+/* Style for the heading */
+.welcome-3 h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Style for the list */
+.welcome-3 ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Style for list items */
+.welcome-3 li {
+  margin-bottom: 10px;
+}
+
+/* Style for strong text within list items */
+.welcome-3 li strong {
+  font-weight: bold;
+}
+
+/* Style for the image */
+.welcome-3-img {
+  height: auto;
+  width: 50%;
+  margin-top: 20px;
+  margin: 50px;
+  border-radius: 20px;
+}
+
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   .welcome-2 {
-      padding: 10px; /* Reduced padding for smaller screens */
+    padding: 10px; 
+    order: -1;
   }
   .welcome-2 h2 {
-      font-size: 20px; /* Decreased font size for smaller screens */
+    font-size: 20px; /* Decreased font size for smaller screens */
+  }
+  .welcome-3 {
+    padding: 10px; 
+    order: -1;
+  }
+  .welcome-3 h2 {
+    font-size: 20px; /* Decreased font size for smaller screens */
   }
 }
-
-
