@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import TagInfoPanel from './TagInfoPanel';
 import './HtmlPage.css';
 
@@ -18,11 +18,18 @@ const HtmlPage = () => {
       ...prevSections,
       [section]: !prevSections[section],
     }));
+    
   };
 
   const showTagInfo = (tag) => {
     setSelectedTag(tag);
+    window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    // Scroll to the top when the page is rendered
+    window.scrollTo(0, 0);
+  }, [])
 
   const htmlTags = [
     '<!-->',

@@ -1,18 +1,31 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './Home.css'; // Import the CSS file for styling
+import { NavLink } from 'react-router-dom';
+
+
+
 
 
 const Home = () => {
+  useEffect(() => {
+    // Scroll to the top when the page is rendered
+    window.scrollTo(0, 0);
+  }, [])
   return (
-    <div className="home-container">
-      <div className='html-home'>
-    
-      <div className='welcome'>
+<div className="home-container">
+  <div className='html-home'>
+    <div className='welcome'>
       <h1>Welcome to HTML School</h1>
       <p>At HTML School, we offer comprehensive courses designed to help you master HTML, the cornerstone of web development. Whether you're just starting or looking to enhance your skills, our expert instructors are here to guide you every step of the way.</p>
-      </div>
-      <img src='html/school.web' alt='three' className='welcome-img' />
-      </div>
+      <NavLink to="/HtmlPage" className="search-button">
+      <button className="custom-button">Search Html-tag</button>
+      </NavLink>
+
+    </div>
+    <img src='html/school.web' alt='three' className='welcome-img' />
+  </div>
+
+
 
 <div className='html-home-2'>
         <img src='html/html2.web' alt='three' className='welcome-2-img' />

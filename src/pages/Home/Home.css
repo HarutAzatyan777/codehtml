@@ -31,6 +31,18 @@
   margin-top: 40px;
 }
 
+.custom-button{
+  width: 200px;
+  height: 100px;
+  border-radius: 25px;
+  background-color: #6081F7;
+}
+
+.custom-button:hover{
+  background-color: aliceblue;
+  cursor: auto;
+}
+
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   /* Common styles for smaller screens */

@@ -53,6 +53,11 @@ const ColorGenerator = () => {
     
   };
 
+  useEffect(() => {
+    // Scroll to the top when the page is rendered
+    window.scrollTo(0, 0);
+  }, [])
+
   return (
     <div className='color-generator-container'>
       {selectedColors.map((color, index) => (
