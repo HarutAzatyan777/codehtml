@@ -48,14 +48,14 @@
   /* Common styles for smaller screens */
   .html-home,
   .html-home-2,
-  html-home-3 {
+  .html-home-3 {
     display: flex;
     justify-content: center;
    flex-direction: column;
     grid-template-columns: 1fr; /* Single column layout on smaller screens */
     justify-items: center;
   }
-  html-home-2 {
+  .html-home-2 {
     order: -1;
   }
 
@@ -79,8 +79,12 @@
 
 /* Style for the paragraph */
 .welcome p {
-  font-size: 32px;
-  line-height: 1.5;
+
+    list-style: none;
+    padding: 0;
+    font-size: 32px;
+    line-height: 1.5;
+  
 }
 
 /* Style for the image */
@@ -129,6 +133,8 @@
 .welcome-2 ul {
   list-style: none;
   padding: 0;
+  font-size: 32px;
+  line-height: 1.5;
 }
 
 /* Style for list items */
@@ -151,6 +157,7 @@
 
 .welcome-3 {
   display: flex;
+  width: 50%;
  flex-direction: column;
   align-items: start;
   text-align: start;
@@ -168,6 +175,8 @@
 .welcome-3 ul {
   list-style: none;
   padding: 0;
+  font-size: 32px;
+  line-height: 1.5;
 }
 
 /* Style for list items */
@@ -180,6 +189,7 @@
   font-weight: bold;
 }
 
+
 /* Style for the image */
 .welcome-3-img {
   height: auto;
@@ -187,6 +197,7 @@
   margin-top: 20px;
   margin: 50px;
   border-radius: 20px;
+  order: 3;
 }
 
 /* Media query for mobile devices */

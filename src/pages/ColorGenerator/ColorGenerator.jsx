@@ -60,7 +60,8 @@ const ColorGenerator = () => {
 
   return (
     <div className='color-generator-container'>
-      {selectedColors.map((color, index) => (
+  <div className='color-section'>
+  {selectedColors.map((color, index) => (
         <div key={index} className='color-generator'>
           <h1 className='color-title' style={{ color: color }}>
             {color}
@@ -79,12 +80,13 @@ const ColorGenerator = () => {
           </label>
           <br />
           <button className='copy-button'  onClick={() => handleCopyToClipboard(index)}>
-          Copy Color Info
+          Copy 
           </button>
           <p className='rgb-values'>{getRgbValues(color)}</p>
 
         </div>
       ))}
+  </div>
      
      
     </div>

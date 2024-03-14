@@ -1,7 +1,7 @@
 .color-generator-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 
 }
 
@@ -11,9 +11,17 @@
 
   text-align: center;
   align-items: center;
-  margin-top: 150px;
-}
 
+}
+.color-section{
+  flex: 6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 150px;
+  gap: 1px;
+
+}
 .color-title {
   border: solid 2px;
   border-radius: 15px ;
@@ -64,7 +72,7 @@
 .color-input {
   display: block;
    /* Add your styles here */
-   width: 100px; /* Adjust width as needed */
+   width: 200px; /* Adjust width as needed */
    height: 200px; /* Adjust height as needed */
    border: none; /* Remove default border */
    cursor: pointer; /* Change cursor to pointer */

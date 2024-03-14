@@ -1638,7 +1638,7 @@ case '<wbr>':
     );
 
 default:
-    return <p>No additional information available for {tag}.</p>;
+    return <p>choose tag {tag}.</p>;
 
 }
 
