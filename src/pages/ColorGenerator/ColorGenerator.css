@@ -2,29 +2,27 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .color-generator {
   display: flex;
   flex-direction: column;
-
   text-align: center;
   align-items: center;
-
 }
-.color-section{
+
+.color-section {
   flex: 6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 150px;
   gap: 1px;
-
 }
+
 .color-title {
   border: solid 2px;
-  border-radius: 15px ;
+  border-radius: 15px;
   margin-bottom: 10px;
   padding: 10px;
 }
@@ -38,11 +36,13 @@
   height: 200px;
   border-radius: 20px;
 }
+.svg-icon{
+  width: 50px;
+ }
 
 .color-label {
   display: block;
   margin-bottom: 10px;
-
 }
 
 .alpha-label {
@@ -52,7 +52,6 @@
 
 .rgb-values {
   margin-bottom: 10px;
-  
 }
 
 .copy-button {
@@ -71,17 +70,57 @@
 
 .color-input {
   display: block;
-   /* Add your styles here */
-   width: 200px; /* Adjust width as needed */
-   height: 200px; /* Adjust height as needed */
-   border: none; /* Remove default border */
-   cursor: pointer; /* Change cursor to pointer */
-   outline: none;
-   overflow: hidden;
-   padding-block:0px ;
-   padding-inline: 0;
-   direction: rtl;
-
+  /* Add your styles here */
+  width: 200px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Change cursor to pointer */
+  outline: none;
+  overflow: hidden;
+  padding-block: 0px;
+  padding-inline: 0;
+  direction: rtl;
 }
 
+/* Mobile size styling */
+@media only screen and (max-width: 600px) {
+  .color-generator-container {
+    margin-top: 100px; /* Example margin adjustment */
+  }
+.color-generator{
+flex-direction: row;
+}
+  .color-section {
+    margin-top: 50px; /* Example margin adjustment */
+  }
 
+  .color-preview {
+    width: 100px; /* Adjusted width for mobile */
+    height: 50px; /* Adjusted height for mobile */
+    order: 3;
+  }
+  .svg-icon{
+    width: 20px;
+   }
+
+
+  .color-input {
+    width: 100px; /* Adjusted width for mobile */
+    height: 50px; /* Adjusted height for mobile */
+  }
+  .color-title{
+    display: none;
+  }
+  .rgb-values{
+    display: none;
+  }
+  .copy-button{
+    order: 3;
+    border-radius: 25px;
+    background-color: #fff;
+    color: black;
+  }
+  .copy-button:hover{
+    background-color:  #00ff00;
+  }
+}

@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import TagInfoPanel from './TagInfoPanel';
-import './HtmlPage.css';
+import './HtmlTag.css';
 
 const HtmlPage = () => {
   const [sections, setSections] = useState({
