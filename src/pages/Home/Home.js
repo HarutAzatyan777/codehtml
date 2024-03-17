@@ -17,19 +17,42 @@ const Home = () => {
     <div className='welcome'>
       <h1>Welcome to HTML School</h1>
       <p>At HTML School, we offer comprehensive courses designed to help you master HTML, the cornerstone of web development. Whether you're just starting or looking to enhance your skills, our expert instructors are here to guide you every step of the way.</p>
-      <NavLink to="/HtmlPage" className="search-button">
-      <button className="custom-button">Search Html-tag</button>
-      </NavLink>
+ <div className='button-home-1'>
+
+ </div>
 
     </div>
-    <img src='html/school.web' alt='three' className='welcome-img' />
+    {/* <img src='html/school.web' alt='three' className='welcome-img' /> */}
   </div>
 
+  <div className='html-home-2'>
+    <section className='section-1'>
+    <NavLink to="/HtmlTag" className="search-button">
+    <div className="custom-button">
+          <img src='html/searchhtml.web' alt='color'  />
+  <p>search Html Tags</p>
+       </div>
+      </NavLink>
+        <NavLink to="/ColorGenerator" className="color-button">
+        <div className="custom-button">
+          <img src='html/color.web' alt='color'  />
+  <p>Creating visually appealing website designs has never been easier with our innovative color tools generator.</p>
+       
+        </div>
+        </NavLink>
+      <NavLink to="/Color" className="color-button">
+      <div className="custom-button">Color Generator</div>
+      </NavLink>
+      <NavLink to="/Color" className="color-button">
+      <div className="custom-button">Color Generator</div>
+      </NavLink>
+    </section>
+  
+</div>
 
-
-<div className='html-home-2'>
-        <img src='html/html2.web' alt='three' className='welcome-2-img' />
-<div className='welcome-2'>
+<div className='html-home-3'>
+        <img src='html/html2.web' alt='three' className='welcome-3-img' />
+<div className='welcome-3'>
 <h2>Why Choose HTML School?</h2>
 <ul>
         <li><strong>Expert Instructors:</strong> Our instructors have years of experience in web development and are passionate about teaching.</li>
@@ -42,9 +65,11 @@ const Home = () => {
 
 </div>
 
-<div className='html-home-3'>
-<img src='html/html3.web' alt='html-tag' className='welcome-3-img' />
-  <div className='welcome-3'>
+
+
+<div className='html-home-4'>
+<img src='html/html3.web' alt='html-tag' className='welcome-4-img' />
+  <div className='welcome-4'>
 <h2>Our Courses</h2>
       <ul>
         <li><strong>HTML Fundamentals:</strong> Master the basics of HTML, including tags, attributes, and document structure.</li>

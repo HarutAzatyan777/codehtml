@@ -1,6 +1,12 @@
 /* Home.css */
 
-/* Common styles for home containers */
+@font-face {
+  font-family: 'LexendExa-VariableFont_wght'; /* Choose a name for your font */
+  src: url('../../fonts/Lexend_Exa/LexendExa-VariableFont_wght.ttf') format('woff2'), /* Specify the path to your font file */
+       url('../../fonts/Lexend_Exa/LexendExa-VariableFont_wght.ttf') format('woff'); /* Add additional formats if needed */
+  /* You can also include font-weight and font-style properties here */
+}
+
 .home-container {
   margin: 0 auto;
 }
@@ -14,13 +20,48 @@
 
 }
 
-
 .html-home-2 {
+  
+}
+
+.section-1 {
   display: flex;
-  justify-content: start;
-  flex-flow: row nowrap;
-  align-items: center;
-  margin-top: 40px;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.custom-button {
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+  
+}
+.custom-button p{
+  position: absolute;
+  top: 20%; /* Adjust as needed to center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff; /* Optional: Set text color */
+  font-weight: bold;
+
+}
+
+.custom-button img{
+  width: 100%;
+ height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button h1 {
+  color: black;
 }
 
 .html-home-3 {
@@ -31,31 +72,34 @@
   margin-top: 40px;
 }
 
-.custom-button{
-  width: 200px;
-  height: 100px;
-  border-radius: 25px;
-  background-color: #6081F7;
+.html-home-4 {
+  display: flex;
+  justify-content: start;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 40px;
+}
+.button-home-1{
+display: flex;
+flex-direction: row;
+gap: 50px;
 }
 
-.custom-button:hover{
-  background-color: aliceblue;
-  cursor: auto;
-}
+
 
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   /* Common styles for smaller screens */
   .html-home,
-  .html-home-2,
-  .html-home-3 {
+  .html-home-3,
+  .html-home-4 {
     display: flex;
     justify-content: center;
    flex-direction: column;
     grid-template-columns: 1fr; /* Single column layout on smaller screens */
     justify-items: center;
   }
-  .html-home-2 {
+  .html-home-3 {
     order: -1;
   }
 
@@ -66,24 +110,30 @@
 
 /* Style for the welcome message and image container */
 .welcome {
-  padding: 70px; /* Default padding */
+  padding: 100px; /* Default padding */
   display: flex;
   flex-direction: column; /* Default direction */
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 /* Style for the heading */
 .welcome h1 {
+  display: flex;
   font-size: 52px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'LexendExa-VariableFont_wght', Arial, sans-serif;
 }
 
 /* Style for the paragraph */
 .welcome p {
-
-    list-style: none;
-    padding: 0;
-    font-size: 32px;
-    line-height: 1.5;
+  width: 60%;
+  text-align: center; /* Align text to the center */
+  list-style: none;
+  font-size: 22px;
+  line-height: 1.5;
   
 }
 
@@ -96,26 +146,13 @@
 }
 
 /* Media query for mobile devices */
-@media only screen and (max-width: 600px) {
-  .welcome {
-    padding: 10px; /* Reduced padding for smaller screens */
-  }
-  .welcome h1 {
-    font-size: 24px; /* Decreased font size for smaller screens */
-  }
-  .welcome p {
-    font-size: 14px; /* Decreased font size for smaller screens */
-  }
-  .welcome-img {
-    width: 100%; /* Full width for smaller screens */
-  }
-}
+
 
 /* Style for the second section container */
 
 
 /* Style for the welcome message container */
-.welcome-2 {
+.welcome-3 {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -124,51 +161,10 @@
 }
 
 /* Style for the heading */
-.welcome-2 h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-/* Style for the list */
-.welcome-2 ul {
-  list-style: none;
-  padding: 0;
-  font-size: 32px;
-  line-height: 1.5;
-}
-
-/* Style for list items */
-.welcome-2 li {
-  margin-bottom: 10px;
-}
-
-/* Style for strong text within list items */
-.welcome-2 li strong {
-  font-weight: bold;
-}
-
-/* Style for the image */
-.welcome-2-img {
-  width: 70%;
-  height: auto;
-  margin-top: 20px;
-}
-
-
-.welcome-3 {
-  display: flex;
-  width: 50%;
- flex-direction: column;
-  align-items: start;
-  text-align: start;
-  padding: 20px;
-
-}
-
-/* Style for the heading */
 .welcome-3 h2 {
   font-size: 32px;
   margin-bottom: 10px;
+  font-family: 'LexendExa-VariableFont_wght', Arial, sans-serif;
 }
 
 /* Style for the list */
@@ -189,9 +185,51 @@
   font-weight: bold;
 }
 
-
 /* Style for the image */
 .welcome-3-img {
+  width: 70%;
+  height: auto;
+  margin-top: 20px;
+}
+
+
+.welcome-4 {
+  display: flex;
+  width: 50%;
+ flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding: 20px;
+
+}
+
+/* Style for the heading */
+.welcome-3 h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Style for the list */
+.welcome-4 ul {
+  list-style: none;
+  padding: 0;
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+/* Style for list items */
+.welcome-4 li {
+  margin-bottom: 10px;
+}
+
+/* Style for strong text within list items */
+.welcome-4 li strong {
+  font-weight: bold;
+}
+
+
+/* Style for the image */
+.welcome-4-img {
   height: auto;
   width: 50%;
   margin-top: 20px;
@@ -200,20 +238,65 @@
   order: 3;
 }
 
-/* Media query for mobile devices */
+
+
 @media only screen and (max-width: 600px) {
-  .welcome-2 {
-    padding: 10px; 
-    order: -1;
+  .welcome {
+    margin-top: 50px;
+    padding: 10px; /* Reduced padding for smaller screens */
   }
-  .welcome-2 h2 {
-    font-size: 20px; /* Decreased font size for smaller screens */
+  .welcome h1 {
+    padding: 10px;
+    text-align: center;
+    font-size: 24px; /* Decreased font size for smaller screens */
   }
+  .welcome p {
+    width:90%;
+    font-size: 14px; /* Decreased font size for smaller screens */
+  }
+  .welcome-img {
+    width: 100%; /* Full width for smaller screens */
+  }
+
+
+
   .welcome-3 {
+    margin-top: 50px;
     padding: 10px; 
     order: -1;
   }
   .welcome-3 h2 {
-    font-size: 20px; /* Decreased font size for smaller screens */
+    text-align: center;
+    font-size: 24px; /* Decreased font size for smaller screens */
   }
+
+
+  .welcome-3 li{
+    font-size: 20px;
+    text-align: center;
+  }
+  .welcome-3-img {
+    width: 100%; /* Full width for smaller screens */
+  }
+ 
+ 
+ 
+  .welcome-4 {
+    text-align: center;
+    order: -1;
+    width: 90%;
+  }
+  .welcome-4 h2 {
+    text-align: center;
+    font-size: 24px; /* Decreased font size for smaller screens */
+  
+}
+
+.welcome-4 li{
+  font-size: 20px;
+  text-align: center;
+}
+.welcome-4-img {
+  width: 100%; /* Full width for smaller screens */
+}
 }

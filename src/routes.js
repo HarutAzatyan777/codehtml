@@ -13,7 +13,7 @@ const RoutesConfig = () => {
       <Route path="/" element={<Home />} />
       <Route path="/HtmlTag" element={<HtmlTag />} /> 
       <Route path="/HtmlCourses" element={<HTMLCourses />} />
-      <Route path="/Color" element={<ColorGenerator />} />
+      <Route path="/ColorGenerator" element={<ColorGenerator />} />
     </Routes>
   );
 };

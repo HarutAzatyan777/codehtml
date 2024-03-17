@@ -5,6 +5,7 @@ import RoutesConfig from './routes';
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header';
 import ReactGA from 'react-ga';
+import Notification from './components/Notification/Notification';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <RoutesConfig />
       </main>
       <Footer />
+      <Notification />
     </div>
   );
 }

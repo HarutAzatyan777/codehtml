@@ -31,7 +31,7 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
     <header className={`main-header ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
       <div className="logo-container">
         <NavLink to="/">
-          <img src="Logo1.png" alt="Logo" className="logo" />
+          <img src="Logo1.svg" alt="Logo" className="logo" />
         </NavLink>
       </div>
       <nav className={`main-navigation ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
@@ -42,14 +42,14 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
         </div>
         <ul>
           <li>
-            <NavLink to="/HtmlPage">HTML</NavLink>
+            <NavLink to="/HtmlTag">HTML</NavLink>
           </li>
           <li>
             <NavLink to="/HTMLCourses">HTMLCourses</NavLink>
           </li>
 
           <li>
-            <NavLink to="/Color">Color</NavLink>
+            <NavLink to="/ColorGenerator">Color</NavLink>
           </li>
           
           <li className="dropdown">
