@@ -162,7 +162,7 @@ gap: 50px;
 
 /* Style for the heading */
 .welcome-3 h2 {
-  font-size: 32px;
+  font-size: 22px;
   margin-bottom: 10px;
   font-family: 'LexendExa-VariableFont_wght', Arial, sans-serif;
 }
@@ -171,7 +171,7 @@ gap: 50px;
 .welcome-3 ul {
   list-style: none;
   padding: 0;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 1.5;
 }
 
@@ -205,7 +205,7 @@ gap: 50px;
 
 /* Style for the heading */
 .welcome-3 h2 {
-  font-size: 32px;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
@@ -213,7 +213,7 @@ gap: 50px;
 .welcome-4 ul {
   list-style: none;
   padding: 0;
-  font-size: 32px;
+  font-size: 22px;
   line-height: 1.5;
 }
 
