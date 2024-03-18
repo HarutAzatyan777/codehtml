@@ -57,7 +57,7 @@
   
     .project-details {
       position: relative; /* Change position to relative for mobile */
-      padding: 10px; /* Adjust padding for mobile */
+    
       background-color: transparent; /* Remove background color for mobile */
       color: #000; /* Change text color for mobile */
       text-align: center; /* Center align text for mobile */
