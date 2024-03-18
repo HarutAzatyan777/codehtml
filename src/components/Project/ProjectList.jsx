@@ -17,7 +17,7 @@ const ProjectList = () => {
       title: 'Color Generator',
     description: 'Customize your site\'s design with a lightning-fast color generator.',
     imageUrl: 'projectlist/colorgenerator.web',
-    projectUrl: 'https://htmltagss.com/Color'
+    projectUrl: 'https://htmltagss.com/ColorGenerator'
     },
     {
       title: 'QR Generator',
