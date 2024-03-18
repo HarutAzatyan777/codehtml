@@ -1,15 +1,23 @@
 {
-  "short_name": "Html",
-  "name": "Html School",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    }
-  ],
+  "name": "HTML Tags",
+  "short_name": "HTML Tags",
+  "description": "Html",
+  "keywords": ["HtmlTags", "HTML elements", "color","color generator", "web development", "frontend", "coding", "HTML5", "CSS", "JavaScript", "programming", "markup", "web design"],
+  "author": "Harut Azatyan",
   "start_url": ".",
   "display": "standalone",
+  "background_color": "#000000",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "icons": [
+    {
+      "src": "%PUBLIC_URL%/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "%PUBLIC_URL%/favicon.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    }
+  ]
 }
