@@ -1,0 +1,23 @@
+.project-list {
+    display: flex;
+    justify-content: center; /* Center the project cards horizontally */
+    /* Negative margin to offset grid gap */
+  }
+  
+  .project-card {
+    margin: 10px; /* Adjust grid gap */
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+    .project-list {
+      flex-direction: column; /* Change flex direction to column for mobile */
+      align-items: center; /* Center align items for mobile */
+    }
+  
+    .project-card {
+      width: 100%; /* Set project card width to 100% for mobile */
+      margin: 10px 0; /* Adjust margin for mobile */
+    }
+  }
+  

@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import './Home.css'; // Import the CSS file for styling
 import { NavLink } from 'react-router-dom';
+import ProjectList from '../../components/Project/ProjectList';
 
 
 
@@ -26,27 +27,8 @@ const Home = () => {
   </div>
 
   <div className='html-home-2'>
-    <section className='section-1'>
-    <NavLink to="/HtmlTag" className="search-button">
-    <div className="custom-button">
-          <img src='html/searchhtml.web' alt='color'  />
-  <p>search Html Tags</p>
-       </div>
-      </NavLink>
-        <NavLink to="/ColorGenerator" className="color-button">
-        <div className="custom-button">
-          <img src='html/color.web' alt='color'  />
-  <p>Creating visually appealing website designs has never been easier with our innovative color tools generator.</p>
-       
-        </div>
-        </NavLink>
-      <NavLink to="/Color" className="color-button">
-      <div className="custom-button">Color Generator</div>
-      </NavLink>
-      <NavLink to="/Color" className="color-button">
-      <div className="custom-button">Color Generator</div>
-      </NavLink>
-    </section>
+
+<ProjectList />
   
 </div>
 
