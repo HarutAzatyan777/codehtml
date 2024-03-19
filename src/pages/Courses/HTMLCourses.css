@@ -31,3 +31,11 @@
     margin-bottom: 10px;
   }
   
+
+  .html-video{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }

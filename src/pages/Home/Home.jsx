@@ -2,6 +2,8 @@ import React,{useEffect} from 'react';
 import './Home.css'; // Import the CSS file for styling
 import { NavLink } from 'react-router-dom';
 import ProjectList from '../../components/Project/ProjectList';
+import Resources from '../Resources/Resources';
+import GetStarted from '../GetStarted/GetStarted';
 
 
 
@@ -63,7 +65,8 @@ const Home = () => {
 
       
 </div>
-    
+    <Resources />
+    <GetStarted />
 
     </div>
     
