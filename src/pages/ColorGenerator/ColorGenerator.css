@@ -22,41 +22,34 @@
 
 }
 
-.color-title {
-align-self:flex-end ;
-  margin-bottom: 10px;
-  padding: 10px;
-}
+
 
 .color-preview {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
   margin-bottom: 10px;
   align-items: center;
   width: 100%;
   height: 800px;
   border-radius: 20px;
 }
-.svg-icon{
-  width: 50px;
- }
 
-.color-label {
-  display: block;
-  margin-bottom: 10px;
+
+
+
+.change-svg,
+.color-title {
+  display: none; /* Hide both the copy button and the change-svg icon by default */
+  position: absolute; /* Position relative to the .color-preview */
 }
 
-.alpha-label {
-  display: none;
-  margin-bottom: 10px;
-}
 
-.rgb-values {
-  
-  order: 2;
-  
-}
-
+.color-title {
+  align-self:center ;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
 .copy-button {
   padding: 10px 20px;
   border: none;
@@ -71,18 +64,67 @@ align-self:flex-end ;
   background-color: #0056b3;
 }
 
+
+.color-preview:hover .change-svg,
+.color-preview:hover .color-title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  align-items: center;
+  width: 50%;
+  height: auto;
+gap: 20px;
+  border-radius: 20px;
+  position: relative;
+
+}
+
+.color-preview:hover .copy-button{
+  position: relative;
+}
+.svg-icon {
+  width: 50px;
+}
+.color-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.alpha-label {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.rgb-values {
+  order: 2;
+}
+
 .color-input {
   display: block;
-  /* Add your styles here */
-  width: 200px; /* Adjust width as needed */
-  height: 200px; /* Adjust height as needed */
-  border: none; /* Remove default border */
-  cursor: pointer; /* Change cursor to pointer */
+  width: 200px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
   outline: none;
   overflow: hidden;
   padding-block: 0px;
   padding-inline: 0;
   direction: rtl;
+  border-radius: 20px;
+}
+
+.change-svg {
+  align-self: center;
+}
+
+.change-svg::after {
+  content: "Change Color"; /* Text for the title */
+  position: absolute;
+  bottom: -20px; /* Adjust as needed */
+  left: 50%; /* Position at the center */
+  transform: translateX(-50%); /* Center horizontally */
+  font-size: 12px; /* Adjust font size as needed */
+  color: #000; /* Color of the title */
 }
 
 /* Mobile size styling */
@@ -141,7 +183,4 @@ flex-direction: row;
 }
 
 
-.change-svg {
-  align-self: flex-end;
-  
-}
+

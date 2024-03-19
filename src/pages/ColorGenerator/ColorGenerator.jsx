@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './ColorGenerator.css';
-import Draggable from 'react-draggable';
+import TrendingColorPalettes from '../../components/TrendingColorPalettes/TrendingColorPalettes';
 
 const ColorGenerator = () => {
   const [selectedColors, setSelectedColors] = useState([
-    '#ff0000', // Red
-    '#00ff00', // Green
-    '#0000ff', // Blue
-    '#ffff00', // Yellow
-    '#ff00ff', // Magenta
-    '#00ffff'  // Cyan
+    '#03045e', // Red
+    '#023e8a', // Green
+    '#0077b6', // Blue
+    '#0096c7', // Yellow
+    '#00b4d8', // Magenta
+    '#caf0f8'  // Cyan
   ]);
   const [randomColorIndex, setRandomColorIndex] = useState(0);
 
@@ -79,6 +79,13 @@ const ColorGenerator = () => {
     window.scrollTo(0, 0);
   }, [])
 
+  const examplePalettes = [
+    ['#ffffff', '#000000', '#ff0000', '#00ff00', '#0000ff'],
+    ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'],
+    ['#ff00ff', '#00ffff', '#ffff00', '#ff6600', '#9966ff'],
+    ['#33ccff', '#ff99cc', '#00cc99', '#ffcc99', '#ccccff'],
+  ];
+
   return (
     <div className='color-generator-container'>
   
@@ -89,11 +96,16 @@ const ColorGenerator = () => {
            <div key={index} className='color-generator' >
           
             <div className='color-preview' style={{ backgroundColor: `${color}` }} onClick={() => handleColorClick(index)}>
+         
             <h1 className='color-title' >
               {color}
             </h1>
   <img src="iconchange.svg" alt="Image" className='change-svg' />
+
 </div>
+   <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
+              Copy 
+            </button>
             <label className='color-label'>
             </label>
             <br />
@@ -102,14 +114,16 @@ const ColorGenerator = () => {
               <input className='alpha-input' type="number" step="0.01" min="0" max="1" value={1} onChange={(event) => handleAlphaChange(event, index)} />
             </label>
             <br />
-            <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
-              Copy 
-            </button>
+        
             <p className='rgb-values'>{getRgbValues(color)}</p>
             <input className='color-input' type="color" value={color} onChange={(event) => handleColorChange(event, index)} />
           </div>
 
         ))}
+      </div>
+      <div className='trend'>
+      <TrendingColorPalettes palettes={examplePalettes} />
+
       </div>
     </div>
   );

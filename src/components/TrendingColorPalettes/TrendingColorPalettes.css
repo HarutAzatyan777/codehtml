@@ -1,0 +1,47 @@
+.trending-color-palettes {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .palettes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+ 
+  }
+  
+  .palette {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .palette h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .colors {
+    display: flex;
+    justify-content: center;
+  }
+  
+
+
+.color {
+    width: 35px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: width 0.3s ease, height 0.3s ease; /* Add transition for width and height */
+  }
+  
+  .color:hover {
+    width: 100px; /* Increase width when hovered */
+   
+  }
+  
+  .color:hover + .color,
+  .color:hover ~ .color {
+    width: 30px; /* Decrease width of adjacent colors when hovered */
+      }
+  
