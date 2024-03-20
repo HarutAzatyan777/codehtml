@@ -8,10 +8,12 @@ const TrendingColorPalettes = ({ palettes }) => {
       <div className="palettes-container">
         {palettes.map((palette, index) => (
           <div key={index} className="palette">
-            <h3>Palette {index + 1}</h3>
+
             <div className="colors">
               {palette.map((color, colorIndex) => (
-                <div key={colorIndex} className="color" style={{ backgroundColor: color }}></div>
+                <div key={colorIndex} className="color-box" style={{ backgroundColor: color }}>
+                  <span className="color-value">{color}</span>
+                </div>
               ))}
             </div>
           </div>

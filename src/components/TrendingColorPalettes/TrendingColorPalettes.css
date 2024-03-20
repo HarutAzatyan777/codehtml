@@ -6,16 +6,15 @@
   .palettes-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
- 
+    margin-top: 100px;
   }
   
   .palette {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
     padding: 10px;
   }
   
-  .palette h3 {
+  color-example {
     margin-top: 0;
     margin-bottom: 10px;
   }
@@ -27,21 +26,28 @@
   
 
 
-.color {
+.color-box {
     width: 35px;
-    height: 40px;
+    height: 100px;
     border-radius: 5px;
     border: 1px solid #ddd;
     transition: width 0.3s ease, height 0.3s ease; /* Add transition for width and height */
   }
   
-  .color:hover {
+  .color-box:hover {
     width: 100px; /* Increase width when hovered */
    
   }
   
-  .color:hover + .color,
-  .color:hover ~ .color {
+  .color-box:hover + .color-box,
+  .color-box:hover ~ .color-box {
     width: 30px; /* Decrease width of adjacent colors when hovered */
       }
-  
+      .color-value {
+        display: none;
+
+      }
+      
+      .color-box:hover .color-value {
+        display: block;
+      }

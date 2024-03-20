@@ -79,12 +79,7 @@ const ColorGenerator = () => {
     window.scrollTo(0, 0);
   }, [])
 
-  const examplePalettes = [
-    ['#ffffff', '#000000', '#ff0000', '#00ff00', '#0000ff'],
-    ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'],
-    ['#ff00ff', '#00ffff', '#ffff00', '#ff6600', '#9966ff'],
-    ['#33ccff', '#ff99cc', '#00cc99', '#ffcc99', '#ccccff'],
-  ];
+
 
   return (
     <div className='color-generator-container'>
@@ -122,7 +117,7 @@ const ColorGenerator = () => {
         ))}
       </div>
       <div className='trend'>
-      <TrendingColorPalettes palettes={examplePalettes} />
+      
 
       </div>
     </div>

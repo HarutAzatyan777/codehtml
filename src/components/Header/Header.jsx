@@ -52,19 +52,10 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
             <NavLink to="/ColorGenerator">Color</NavLink>
           </li>
           
-          <li className="dropdown">
-            <ScrollLink to="Features" smooth={true} duration={500}>
-              ICON
-            </ScrollLink>
-            <div className="dropdown-content">
-              <ScrollLink to="feature1" smooth={true} duration={500}>
-                SVG
-              </ScrollLink>
-              <ScrollLink to="feature2" smooth={true} duration={500}>
-                JSX
-              </ScrollLink>
-            </div>
+          <li>
+            <NavLink to="/TrendingColor">TrendingColor</NavLink>
           </li>
+           
           <li>
             <ScrollLink to="priceplans" smooth={true} duration={500}>
               Fonts
