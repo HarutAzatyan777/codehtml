@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // Import components
 import Home from './pages/Home/Home';
-import HtmlTag from './pages/Html/HtmlTag';
+import HtmlTag from './pages/Html/HtmlTag/HtmlTag';
 import HTMLCourses from './pages/Courses/HTMLCourses'; 
 import ColorGenerator from './pages/ColorGenerator/ColorGenerator'
 import Resources from './pages/Resources/Resources';

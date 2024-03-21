@@ -1,16 +1,19 @@
 import React, { useState,useEffect } from 'react';
-import TagInfoPanel from './TagInfoPanel';
+import TagInfoPanel from '../TagInfoPanel';
 import './HtmlTag.css';
+
 
 const HtmlPage = () => {
   const [sections, setSections] = useState({
     alphabet: false,
     category: false,
     tags: true,
-    // Add more sections as needed
+    tutorial: false, 
   });
 
   const [selectedTag, setSelectedTag] = useState(null);
+  const [selectedTutorial, setSelectedTutorial] = useState(null);
+
   const [searchTerm, setSearchTerm] = useState('');
 
   const toggleSection = (section) => {
@@ -23,6 +26,11 @@ const HtmlPage = () => {
 
   const showTagInfo = (tag) => {
     setSelectedTag(tag);
+    window.scrollTo(0, 0);
+  };
+
+  const showTutorialInfo = (tutorial) => {
+    setSelectedTutorial(tutorial);
     window.scrollTo(0, 0);
   };
 
@@ -156,9 +164,17 @@ const HtmlPage = () => {
     '<wbr>',
   ];
 
+  const htmlTutorials =[
+"Global"
+  ]
+
   // Function to filter HTML tags based on the search term
   const filteredHtmlTags = htmlTags.filter(tag =>
     tag.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredHtmlTutorials = htmlTutorials.filter(tutorial =>
+    tutorial.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   // Function to handle changes in the search input
@@ -180,6 +196,27 @@ const HtmlPage = () => {
           onChange={handleSearchInputChange}
         />
 
+{/* //tutorial */}
+<div>
+  
+<h2 onClick={() => toggleSection('tutorial')}>HTML Tutorial</h2>
+        {sections.tutorial && (
+           <div className="tutorial-section-content">
+           {/* Display filtered HTML Tutorials */}
+           <ul>
+             {filteredHtmlTutorials.map((tutorial, index) => (
+               <li key={index} onClick={() => showTutorialInfo(tutorial)}>
+                 {tutorial}
+               </li>
+             ))}
+           </ul>
+
+         </div>
+        )}
+</div>
+
+<div>
+
         <h2 onClick={() => toggleSection('tags')}>HTML Tags</h2>
         {sections.tags && (
           <div className="section-content">
@@ -191,8 +228,14 @@ const HtmlPage = () => {
                 </li>
               ))}
             </ul>
+
           </div>
+          
         )}
+</div>
+
+
+    
 
       </div>
 

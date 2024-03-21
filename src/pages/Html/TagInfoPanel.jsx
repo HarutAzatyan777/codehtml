@@ -3,7 +3,7 @@
 import React,{useState} from 'react';
 import './TagInfoPanel.css'; // Import the CSS file
 
-const TagInfoPanel = ({ selectedTag }) => {
+const TagInfoPanel = ({ selectedTag,selectedTutorial }) => {
 
     
       const [isCopied, setIsCopied] = useState(false);
@@ -1643,13 +1643,35 @@ default:
 }
 
     };
+    
+    const getTutorialInfo = (tutorial) => {
+        switch (tutorial) {
+          case '':
+            return (
+              <div>
+                {/* Your tutorial content goes here */}
+                <p>Please select a tutorial.</p>
+              </div>
+            );
+          default:
+            return (
+              <div>
+                {/* Your tutorial content goes here */}
+                <p>Choose tutorial {tutorial}.</p>
+              </div>
+            );
+        }
+      };
+      
+  
 
   return (
     <div className="tag-info-panel">
       <h3>{selectedTag}</h3>
       {getTagInfo(selectedTag)}
+      {getTutorialInfo(selectedTutorial)}
+      
     </div>
-    
   );
 };
 
