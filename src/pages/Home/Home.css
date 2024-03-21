@@ -74,7 +74,7 @@
 
 .html-home-4 {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   flex-flow: row nowrap;
   align-items: center;
   margin-top: 40px;
@@ -231,10 +231,7 @@ gap: 50px;
 
 /* Style for the image */
 .welcome-4-img {
-  height: auto;
-  width: 50%;
   margin-top: 20px;
-  margin: 50px;
   border-radius: 20px;
   order: 3;
 }
@@ -243,13 +240,13 @@ gap: 50px;
 
 @media only screen and (max-width: 600px) {
   .welcome {
-    margin-top: 50px;
-    padding: 10px; /* Reduced padding for smaller screens */
+    display: flex;
+    padding: 10px;
   }
   .welcome h1 {
     padding: 10px;
     text-align: center;
-    font-size: 24px; /* Decreased font size for smaller screens */
+    font-size: 50px; /* Decreased font size for smaller screens */
   }
   .welcome p {
     width:90%;
@@ -277,7 +274,6 @@ gap: 50px;
     text-align: center;
   }
   .welcome-3-img {
-    width: 100%; /* Full width for smaller screens */
   }
  
  
@@ -298,6 +294,6 @@ gap: 50px;
   text-align: center;
 }
 .welcome-4-img {
-  width: 100%; /* Full width for smaller screens */
+  width: 50%; /* Full width for smaller screens */
 }
 }

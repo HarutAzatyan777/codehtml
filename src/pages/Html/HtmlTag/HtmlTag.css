@@ -7,8 +7,8 @@
 }
 
 .side-panel {
-  width: 50%; /* Fixed width */
-  min-height: 200px; /* Adjust as needed */
+  width: 100%; /* Fixed width */
+  height: auto; /* Adjust as needed */
  
   padding: 20px;
   background-color: #f5f5f5;
@@ -64,7 +64,6 @@ h2 {
 
 
 input[type="text"] {
-  width: 100%; /* Take up full width */
   padding: 10px; /* Add padding */
   margin-bottom: 10px; /* Add spacing below the input */
   border: 1px solid #ccc; /* Add border */

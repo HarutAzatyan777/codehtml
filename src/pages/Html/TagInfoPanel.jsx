@@ -2,6 +2,7 @@
 
 import React,{useState} from 'react';
 import './TagInfoPanel.css'; // Import the CSS file
+import HtmlTutorial from './HtmlTutorial/HtmlTutorial';
 
 const TagInfoPanel = ({ selectedTag,selectedTutorial }) => {
 
@@ -1638,7 +1639,7 @@ case '<wbr>':
     );
 
 default:
-    return <p>choose tag {tag}.</p>;
+    return <p>{tag}</p>;
 
 }
 
@@ -1646,18 +1647,16 @@ default:
     
     const getTutorialInfo = (tutorial) => {
         switch (tutorial) {
-          case '':
+          case 'Global':
             return (
               <div>
-                {/* Your tutorial content goes here */}
-                <p>Please select a tutorial.</p>
+             <HtmlTutorial />
               </div>
             );
           default:
             return (
               <div>
-                {/* Your tutorial content goes here */}
-                <p>Choose tutorial {tutorial}.</p>
+                {tutorial}
               </div>
             );
         }

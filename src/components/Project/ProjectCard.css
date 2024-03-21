@@ -7,10 +7,8 @@
 
   
   .project-image {
-    width: 100%;
-    max-width: 200px;
-  height: auto;
-    height: auto;
+    width: 210px;
+  height: 300px;
     border-bottom: 1px solid #ccc;
     border-radius: 25px;
 
@@ -77,19 +75,24 @@
     .a-img{
       display: flex;
       justify-content: center;
+      width: 100%;
 
     }
   
+    .project-description{
+      font-size: 14px;
+    }
     .project-details {
       position: relative; /* Change position to relative for mobile */
-    
+    display: flex;
+    justify-content: center;
+    width: 50%;
       text-align: center; /* Center align text for mobile */
     }
     .project-title {
       padding: 5px;
       margin-top: 0;
       margin-bottom: 5px;
-      font-size: 0.5rem;
     }
     .project-image {
       display: flex;

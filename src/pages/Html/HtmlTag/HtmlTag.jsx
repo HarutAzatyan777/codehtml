@@ -202,7 +202,7 @@ const HtmlPage = () => {
 <h2 onClick={() => toggleSection('tutorial')}>HTML Tutorial</h2>
         {sections.tutorial && (
            <div className="tutorial-section-content">
-           {/* Display filtered HTML Tutorials */}
+           {/* Display filtered torials */}
            <ul>
              {filteredHtmlTutorials.map((tutorial, index) => (
                <li key={index} onClick={() => showTutorialInfo(tutorial)}>
@@ -241,7 +241,8 @@ const HtmlPage = () => {
 
    
       <div className="side-panel">
-        <TagInfoPanel selectedTag={selectedTag} />
+        <TagInfoPanel selectedTag={selectedTag} selectedTutorial={selectedTutorial} />
+
       </div>
     </div>
   );
