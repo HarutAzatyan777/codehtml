@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
 import { NavLink } from 'react-router-dom';
 import './Header.css'; // Import your CSS file for styling
 
-const Header = ({ currentLanguage, onLanguageSwitch }) => {
+const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+    setMobileMenuOpen(prevState => !prevState);
   };
+  
 
   // Function to close mobile menu when clicking outside of it
-  const closeMobileMenu = () => {
-    if (mobileMenuOpen) {
+  const closeMobileMenu = (event) => {
+    const isMenuClicked = event.target.closest('.main-navigation') !== null;
+    if (!isMenuClicked && mobileMenuOpen) {
       setMobileMenuOpen(false);
     }
   };
@@ -35,26 +36,24 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
         </NavLink>
       </div>
       <nav className={`main-navigation ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <div className="menu-icon" onClick={toggleMobileMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
+      <div className="menu-icon" onClick={toggleMobileMenu}>
+  <div className="bar"></div>
+  <div className="bar"></div>
+  <div className="bar"></div>
+</div>
+
         <ul>
           <li>
             <NavLink to="/HtmlTag">HTML</NavLink>
           </li>
-         
-
           <li>
-            <NavLink to="/ColorGenerator">ColorGenerator</NavLink>
-          </li>
-          
-          <li>
-            <NavLink to="/TrendingColor">TrendingColor</NavLink>
+            <NavLink to="/ColorGenerator">Color Generator</NavLink>
           </li>
           <li>
-            <NavLink to="/HTMLCourses">HTMLCourses</NavLink>
+            <NavLink to="/TrendingColor">Trending Color</NavLink>
+          </li>
+          <li>
+            <NavLink to="/HTMLCourses">HTML Courses</NavLink>
           </li>
           <li>
             <NavLink to="/login">Log In</NavLink>
@@ -62,28 +61,6 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
           <li>
             <NavLink to="/blogHome">Blog</NavLink>
           </li>
-          {/* <li>
-            <ScrollLink to="priceplans" smooth={true} duration={500}>
-              Fonts
-            </ScrollLink>
-          </li>
-          <li>
-            <NavLink to="/resources">Resources</NavLink>
-          </li>
-          <li>
-            <ScrollLink to="login" smooth={true} duration={500}>
-              Log In
-            </ScrollLink>
-          </li>
-          <li>
-            <ScrollLink to="get-started" smooth={true} duration={500}>
-              Get Started
-            </ScrollLink>
-          </li> */}
-          {/* <label htmlFor="toggleSwitch" className="switch">
-            <span className="on">En</span>
-            <span className="off">Am</span>
-          </label> */}
         </ul>
       </nav>
     </header>
