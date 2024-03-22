@@ -1,0 +1,44 @@
+/* AddPost.css */
+
+.addPostContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.addPostContainer > div {
+  margin-bottom: 15px;
+}
+
+.addPostContainer p {
+  margin-bottom: 10px;
+}
+
+.addPostContainer .MuiTextField-root {
+  width: 100%;
+}
+
+.addPostContainer .MuiButton-root {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.addPostContainer .postMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addPostContainer .postMessage p {
+  margin-bottom: 10px;
+}
+
+.addPostContainer .postMessage a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}

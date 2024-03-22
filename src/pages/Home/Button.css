@@ -1,0 +1,158 @@
+
+.get-in-touch-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #38CDA1;
+  border-radius: 25px;
+  transition: 0.3s;
+  color: var(--2, #050505);
+  font-family: Montserrat;
+  font-size:1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 120.037%; /* 1.87556rem */
+  text-transform: uppercase;
+}
+
+
+.get-in-touch-container:hover{
+  background-color:#F1F1F1;
+  color: #38CDA1;
+  border: 5px #38CDA1 solid ;
+}
+
+
+
+.get-text:hover{
+color: #F1F1F1;
+ 
+}
+.get-in-touch-container {
+  cursor: pointer;
+  /* Add any other styles you want for the container */
+}
+
+.contact-window-g {
+  /* Styles for the overlay when the contact window is open */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.contact-window {
+  display: flex;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 5px;
+  width: 540px;
+  height: 568PX;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+}
+
+/* Styles for the close button */
+.close-button {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  /* Add any other styles you want for the close button */
+}
+
+/* Styles for the form and its elements */
+.form-button {
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+}
+
+.form-label {
+ display: flex;
+ justify-content: center;
+gap: 20px;
+ 
+}
+
+.form-control-1,
+.form-control-2,
+.form-control-3,
+.form-control-4 {
+width: 100%;
+padding: 20px;
+border-radius: 20px;
+}
+
+.custom-button {
+  border-radius: 20px;
+padding: 20px;
+}
+
+.form-error {
+  /* Add styles for the error message */
+}
+
+/* Styles for the success alert */
+.alert.alert-success {
+  /* Add styles for the success message */
+}
+
+/* Styles for the "Get In Touch" text and description */
+.text-get-1 {
+font-size: 1rem;}
+
+.text-get-2 {
+font-size: 1rem;}
+
+
+
+
+@media (max-width: 768px) {
+
+.contact{
+width: 100%;
+
+
+}
+.get-in-touch-container{
+height: 100%;
+width: 100%;
+color: var(--2, #050505);
+font-family: Montserrat;
+font-style: normal;
+font-weight: 800;
+line-height: 120.037%; /* 21.607px */
+text-transform: uppercase;
+font-size: 1rem;
+
+
+  
+}
+
+
+.home-container .item.item-1 .container-1 .button .contact{
+  width: 40%;
+  height: 100%;
+}
+
+  .get-text{
+
+    
+  }
+  
+  .get-in-touch-button {
+    
+  
+  }
+}
+

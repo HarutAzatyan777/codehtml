@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    align-items: center;
+    /* Additional styles for the root container */
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* Additional styles for the avatar image */
+  }
+  
+  .userDetails {
+    margin-left: 10px;
+    /* Additional styles for the user details section */
+  }
+  
+  .userName {
+    font-weight: bold;
+    /* Additional styles for the user name */
+  }
+  
+  .additional {
+    color: #777;
+    font-size: 0.8em;
+    /* Additional styles for the additional text */
+  }
+  

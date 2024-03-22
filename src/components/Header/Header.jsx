@@ -56,6 +56,12 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
           <li>
             <NavLink to="/HTMLCourses">HTMLCourses</NavLink>
           </li>
+          <li>
+            <NavLink to="/login">Log In</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blogHome">Blog</NavLink>
+          </li>
           {/* <li>
             <ScrollLink to="priceplans" smooth={true} duration={500}>
               Fonts
@@ -74,10 +80,10 @@ const Header = ({ currentLanguage, onLanguageSwitch }) => {
               Get Started
             </ScrollLink>
           </li> */}
-          <label htmlFor="toggleSwitch" className="switch">
+          {/* <label htmlFor="toggleSwitch" className="switch">
             <span className="on">En</span>
             <span className="off">Am</span>
-          </label>
+          </label> */}
         </ul>
       </nav>
     </header>

@@ -1,0 +1,60 @@
+.container-register {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .title-register {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .field-register {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .field-register:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .button-register {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-register:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .registerText {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .reggister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .avatarUrl-error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+  }
+  
