@@ -1,7 +1,7 @@
 .project-list {
     display: flex;
-    justify-content: center; /* Center the project cards horizontally */
-    /* Negative margin to offset grid gap */
+    justify-content: center; 
+    flex-wrap: wrap;
   }
   
   .project-card {

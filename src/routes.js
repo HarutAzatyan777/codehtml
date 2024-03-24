@@ -38,11 +38,12 @@ const RoutesConfig = () => {
       <Route path="/resources" element={<Resources />} />
       <Route path="/get-started" element={<GetStarted />} />
       <Route path="/TrendingColor" element={<TrendingColor />} />
+      <Route path="/Resources" element={<Resources />} />
 
       <Route path="/login" element={isAuth ? <Navigate to="/" /> : <Login />} />
       <Route path="/register" element={isAuth ? <Navigate to="/" /> : <Registration />} />
 
-      <Route path="/blogHome" element={<BlogHome />} /> {/* Fixed path */}
+      <Route path="/programingblog" element={<BlogHome />} /> {/* Fixed path */}
 
 
       <Route path="/add-post" element={isAuth ? <AddPost /> : <Navigate to="/login" />} />

@@ -44,7 +44,7 @@ const Header = () => {
 
         <ul>
           <li>
-            <NavLink to="/HtmlTag">HTML</NavLink>
+            <NavLink to="/HtmlTag">HTML Tags</NavLink>
           </li>
           <li>
             <NavLink to="/ColorGenerator">Color Generator</NavLink>
@@ -59,8 +59,14 @@ const Header = () => {
             <NavLink to="/login">Log In</NavLink>
           </li>
           <li>
-            <NavLink to="/blogHome">Blog</NavLink>
+            <NavLink to="/programingblog">Blog</NavLink>
           </li>
+
+          <li>
+            <NavLink to="/Resources"> Dev Resources</NavLink>
+          </li>
+
+        
         </ul>
       </nav>
     </header>

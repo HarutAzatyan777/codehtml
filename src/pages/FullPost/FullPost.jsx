@@ -65,7 +65,7 @@ const FullPost = () => {
   
 
       <div className="full-post-container">
-        <Link to="/blogHome" className="homefull-button">
+        <Link to="/programingblog" className="homefull-button">
           <button className="homefull-button">Blog</button>
         </Link>
         {!isLoading && post ? (

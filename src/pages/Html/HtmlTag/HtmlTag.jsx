@@ -12,7 +12,6 @@ const HtmlPage = () => {
   });
 
   const [selectedTag, setSelectedTag] = useState(null);
-  const [selectedTutorial, setSelectedTutorial] = useState(null);
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -29,10 +28,7 @@ const HtmlPage = () => {
     window.scrollTo(0, 0);
   };
 
-  const showTutorialInfo = (tutorial) => {
-    setSelectedTutorial(tutorial);
-    window.scrollTo(0, 0);
-  };
+
 
   useEffect(() => {
     // Scroll to the top when the page is rendered
@@ -40,6 +36,7 @@ const HtmlPage = () => {
   }, [])
 
   const htmlTags = [
+    'Tutorial',
     '<!-->',
     '<!DOCTYPE>',
     '<a>',
@@ -164,18 +161,14 @@ const HtmlPage = () => {
     '<wbr>',
   ];
 
-  const htmlTutorials =[
-"Global"
-  ]
+
 
   // Function to filter HTML tags based on the search term
   const filteredHtmlTags = htmlTags.filter(tag =>
     tag.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const filteredHtmlTutorials = htmlTutorials.filter(tutorial =>
-    tutorial.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+
 
   // Function to handle changes in the search input
   const handleSearchInputChange = (event) => {
@@ -196,24 +189,7 @@ const HtmlPage = () => {
           onChange={handleSearchInputChange}
         />
 
-{/* //tutorial */}
-<div>
-  
-<h2 onClick={() => toggleSection('tutorial')}>HTML Tutorial</h2>
-        {sections.tutorial && (
-           <div className="tutorial-section-content">
-           {/* Display filtered torials */}
-           <ul>
-             {filteredHtmlTutorials.map((tutorial, index) => (
-               <li key={index} onClick={() => showTutorialInfo(tutorial)}>
-                 {tutorial}
-               </li>
-             ))}
-           </ul>
 
-         </div>
-        )}
-</div>
 
 <div>
 
@@ -241,7 +217,7 @@ const HtmlPage = () => {
 
    
       <div className="side-panel">
-        <TagInfoPanel selectedTag={selectedTag} selectedTutorial={selectedTutorial} />
+        <TagInfoPanel selectedTag={selectedTag}  />
 
       </div>
     </div>

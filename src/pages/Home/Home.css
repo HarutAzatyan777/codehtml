@@ -33,7 +33,7 @@
 }
 
 .custom-button {
-  width: 300px;
+
   height: auto;
   margin: 20px;
   position: relative;
@@ -158,7 +158,7 @@ gap: 50px;
   flex-direction: column;
   align-items: start;
   text-align: start;
-  padding: 20px;
+
 }
 
 /* Style for the heading */
@@ -170,6 +170,7 @@ gap: 50px;
 
 /* Style for the list */
 .welcome-3 ul {
+  width: 90%;
   list-style: none;
   padding: 0;
   font-size: 22px;
@@ -188,7 +189,7 @@ gap: 50px;
 
 /* Style for the image */
 .welcome-3-img {
-  width: 70%;
+  width: 50%;
   height: auto;
   margin-top: 20px;
 }
@@ -231,6 +232,7 @@ gap: 50px;
 
 /* Style for the image */
 .welcome-4-img {
+  width: 34%;
   margin-top: 20px;
   border-radius: 20px;
   order: 3;
@@ -241,7 +243,7 @@ gap: 50px;
 @media only screen and (max-width: 600px) {
   .welcome {
     display: flex;
-    padding: 10px;
+    padding: 20px;
   }
   .welcome h1 {
     padding: 10px;
@@ -250,7 +252,7 @@ gap: 50px;
   }
   .welcome p {
     width:90%;
-    font-size: 14px; /* Decreased font size for smaller screens */
+    font-size: 22px; /* Decreased font size for smaller screens */
   }
   .welcome-img {
     width: 100%; /* Full width for smaller screens */
@@ -274,8 +276,11 @@ gap: 50px;
     text-align: center;
   }
   .welcome-3-img {
+    width: 100%;
   }
- 
+  .welcome-3 ul {
+    width: 100%;
+  }
  
  
   .welcome-4 {

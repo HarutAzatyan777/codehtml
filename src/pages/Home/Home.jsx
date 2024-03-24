@@ -1,8 +1,8 @@
 import React,{useEffect} from 'react';
 import './Home.css'; // Import the CSS file for styling
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import ProjectList from '../../components/Project/ProjectList';
-import Resources from '../Resources/Resources';
+// import Resources from '../Resources/Resources';
 import GetStarted from '../GetStarted/GetStarted';
 
 
@@ -30,7 +30,7 @@ const Home = () => {
 
   <div className='html-home-2'>
 
-<ProjectList />
+
   
 </div>
 
@@ -62,11 +62,14 @@ const Home = () => {
         {/* Add more courses as needed */}
       </ul>
   </div>
-
       
 </div>
-    <Resources />
+   
     <GetStarted />
+<div>
+
+  <ProjectList />
+</div>
 
     </div>
     

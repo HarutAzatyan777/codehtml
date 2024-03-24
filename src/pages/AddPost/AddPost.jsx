@@ -125,7 +125,7 @@ const AddPost = () => {
           <Button variant="contained" color="secondary" onClick={handleRemove}>
           Remove Post
           </Button>
-          <Link to="/bloghome">Go to Blog Home</Link>
+          <Link to="/programingblog">Go to Blog Home</Link>
         </div>
       )}
     </div>

@@ -16,7 +16,9 @@ const Footer = () => {
             <br />
             Phone:+374-41-455-440
             <br />
-            Email: developerhar@gmail.com
+            Email:  htmltags7@gmail.com
+            developerhar@gmail.com
+          
           </p>
         </div>
 

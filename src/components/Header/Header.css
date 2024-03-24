@@ -12,6 +12,7 @@
   background-color: #6081F7;
   color: #fff;
   z-index: 9999;
+  transition: transform 0.5s ease; /* Add transition for smooth animation */
 }
 
 .logo-container {
@@ -34,13 +35,23 @@
 }
 
 .main-navigation li {
-  margin-right: 20px; 
+  margin-right: 20px;
   cursor: pointer;
 }
 
 .main-navigation a {
+  display: flex;
+  background-color: black;
+  border-radius: 15px;
   text-decoration: none;
   color: #fff;
+  padding: 10px;
+}
+
+.main-navigation a:hover {
+  background-color: #fff;
+  color: black;
+  scale: inherit;
 }
 
 .menu-icon {
@@ -69,18 +80,43 @@
     width: 100%;
     text-align: center;
     position: absolute;
+    border-radius: 25PX;
     top: 70px;
     left: 0;
     background-color: #6081F7;
     z-index: 1;
     padding: 0;
+    transform: translateY(-100%); /* Initially move menu out of view */
+    transition: transform 0.5s ease; /* Add transition for smooth animation */
   }
 
-  .main-header.mobile-menu-open .main-navigation ul {
-    display: flex;
+  .main-navigation a {
+    width: 200px;
+    justify-content: center;
   }
 
   .main-navigation li {
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-header.mobile-menu-open .main-navigation ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-self: flex-start;
+    gap: 4px;
+    transform: translateY(0); /* Move menu into view when mobile menu opens */
+  }
+
+  .main-header.mobile-menu-open {
+    transform: translateY(0); /* Adjust value as needed */
+  }
+
+  .main-navigation li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
   }
 }

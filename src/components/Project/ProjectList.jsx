@@ -26,18 +26,18 @@ const ProjectList = () => {
     projectUrl: 'https://htmltagss.com/TrendingColor'
     },
 
-    {
-      title: 'QR Generator',
-      description: 'Generate QR codes quickly and easily for your needs.',
-      imageUrl: 'projectlist/qr.web',
-      projectUrl: 'https://harutdev.com/QrCode'
-  },
+  //   {
+  //     title: 'QR Generator',
+  //     description: 'Generate QR codes quickly and easily for your needs.',
+  //     imageUrl: 'projectlist/qr.web',
+  //     projectUrl: 'https://harutdev.com/QrCode'
+  // },
   
   {
-    title: 'CodeRed',
-    description: 'Let us create an affordable and quality website for you.',
+    title: 'Programing Blog',
+    description: 'Brushup all your javascript skills at one place.',
     imageUrl: 'projectlist/company.web',
-    projectUrl: 'https://codered.harutdev.com/'
+    projectUrl: 'https://htmltagss.com/programingblog'
 }
 
   ];

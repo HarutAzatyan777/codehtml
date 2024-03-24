@@ -4,7 +4,7 @@ import React,{useState} from 'react';
 import './TagInfoPanel.css'; // Import the CSS file
 import HtmlTutorial from './HtmlTutorial/HtmlTutorial';
 
-const TagInfoPanel = ({ selectedTag,selectedTutorial }) => {
+const TagInfoPanel = ({ selectedTag}) => {
 
     
       const [isCopied, setIsCopied] = useState(false);
@@ -13,6 +13,7 @@ const TagInfoPanel = ({ selectedTag,selectedTutorial }) => {
 
   const getTagInfo = (tag) => {
     switch (tag) {
+      
         case '<!-->':
             return (
               <div>
@@ -80,6 +81,13 @@ const TagInfoPanel = ({ selectedTag,selectedTutorial }) => {
                 </p>
               </div>
             );
+
+            case 'Tutorial':
+                return (
+                  <div>
+                  <HtmlTutorial />
+                  </div>
+                );
           
         case '<!DOCTYPE>':
             const codeExample = `<!DOCTYPE html>
@@ -1645,33 +1653,17 @@ default:
 
     };
     
-    const getTutorialInfo = (tutorial) => {
-        switch (tutorial) {
-          case 'Global':
-            return (
-              <div>
-             <HtmlTutorial />
-              </div>
-            );
-          default:
-            return (
-              <div>
-                {tutorial}
-              </div>
-            );
-        }
-      };
-      
+
   
-
-  return (
-    <div className="tag-info-panel">
-      <h3>{selectedTag}</h3>
-      {getTagInfo(selectedTag)}
-      {getTutorialInfo(selectedTutorial)}
-      
-    </div>
-  );
-};
-
-export default TagInfoPanel;
+    return (
+        <div className="tag-info-panel">
+          <h3>{selectedTag}</h3>
+          {getTagInfo(selectedTag)}
+    
+          {/* Example of copied state */}
+          {isCopied && <div>Copied!</div>}
+        </div>
+      );
+    };
+    
+    export default TagInfoPanel;
