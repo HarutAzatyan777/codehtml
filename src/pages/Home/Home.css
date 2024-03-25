@@ -18,6 +18,9 @@
   align-items: center;
   margin-top: 40px;
 
+  background-color: #6081f7;
+
+
 }
 
 .html-home-2 {
@@ -115,7 +118,7 @@ gap: 50px;
   flex-direction: column; /* Default direction */
   align-items: center;
   justify-content: center;
-  background-color: #6081f7;
+
   
 }
 

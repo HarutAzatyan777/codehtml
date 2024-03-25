@@ -54,20 +54,22 @@ const Header = () => {
           </li>
 
           <li>
-            <NavLink to="/ImageGenerator">  ImageGenerator</NavLink>
+            <NavLink to="/ImageGenerator">  Image Generator</NavLink>
           </li>
           <li>
             <NavLink to="/HTMLCourses">HTML Courses</NavLink>
           </li>
+        
+        
+
           <li>
-            <NavLink to="/login">Log In</NavLink>
+            <NavLink to="/Resources"> Dev Resources</NavLink>
           </li>
           <li>
             <NavLink to="/programingblog">Blog</NavLink>
           </li>
-
           <li>
-            <NavLink to="/Resources"> Dev Resources</NavLink>
+            <NavLink to="/login">Log In</NavLink>
           </li>
         
         
