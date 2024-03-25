@@ -52,6 +52,10 @@ const Header = () => {
           <li>
             <NavLink to="/TrendingColor">Trending Color</NavLink>
           </li>
+
+          <li>
+            <NavLink to="/ImageGenerator">  ImageGenerator</NavLink>
+          </li>
           <li>
             <NavLink to="/HTMLCourses">HTML Courses</NavLink>
           </li>
@@ -65,7 +69,7 @@ const Header = () => {
           <li>
             <NavLink to="/Resources"> Dev Resources</NavLink>
           </li>
-
+        
         
         </ul>
       </nav>

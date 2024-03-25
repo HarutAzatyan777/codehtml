@@ -1,41 +1,93 @@
-/* HTMLCourses.css */
-
 .container-courses {
-   
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  gap: 20px;
+}
 
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .container-courses h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  
-  .courses-text{
-    
-  }
-  .container-courses p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .container-courses ul {
-  
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .container-courses li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-  }
-  
+.courses-text {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  gap: 65px;
+}
 
-  .html-video{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+.img1-courses{
+  width: 50%;
+  border-radius: 25px;
+}
 
+.section-text-courses{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align:end;
+}
+.html-video {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.video-section-text{
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  text-align: start;
+}
+
+.img2-courses{
+  width: 50%;
+  border-radius: 25px;
+}
+.free-html-courses {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.section-text-3{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align:end;
+}
+
+.img3-courses{
+  width: 50%;
+  border-radius: 25px;
+}
+
+/* Additional styling for specific elements if needed */
+@media screen and (max-width: 768px) {
+  .container-courses {
+    margin-top: 30px; /* Adjusted margin for smaller screens */
   }
+
+  .free-html-courses{
+    flex-direction: column;
+  }
+  
+.video-section-text{
+  flex-direction: column;
+}
+
+  .courses-text {
+    flex-direction: column;
+    margin-bottom: 5px; /* Further reduced margin for mobile */
+  }
+  
+  .img1-courses,
+  .img2-courses,
+  .img3-courses {
+    width: 100%;
+    border-radius: 10px; /* Further reduced border radius for mobile */
+  }
+  
+  .html-video,
+  .free-html-courses {
+    flex-direction: column;
+    margin-bottom: 5px; /* Further reduced margin for mobile */
+  }
+}

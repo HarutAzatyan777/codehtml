@@ -25,7 +25,7 @@ const HtmlPage = () => {
 
   const showTagInfo = (tag) => {
     setSelectedTag(tag);
-    window.scrollTo(0, 0);
+   
   };
 
 

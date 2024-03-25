@@ -291,24 +291,87 @@ const TagInfoPanel = ({ selectedTag}) => {
                 );
               
       
-      case '<abbr>':
-          // Return JSX explaining the abbreviation tag and providing an example
-          return (
-              <div>
-                  <p>This is an abbreviation or acronym, typically styled differently.</p>
-                  <p>Example:</p>
-                  <p>{'<abbr title="World Wide Web">WWW</abbr>'}</p>
-              </div>
-          );
-      
+                case '<abbr>':
+                    // Return JSX explaining the abbreviation tag and providing an example
+                    return (
+                      <div>
+                        <p>Definition and Usage:</p>
+                        <p>The &lt;abbr&gt; tag defines an abbreviation or an acronym, like "HTML", "CSS", "Mr.", "Dr.", "ASAP", "ATM".</p>
+                        <p>Example:</p>
+                        <p>The &lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt; was founded in 1948.</p>
+                        <p>More "Try it Yourself" examples below.</p>
+                        <p>Browser Support:</p>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Element</th>
+                              <th>Chrome</th>
+                              <th>Firefox</th>
+                              <th>IE</th>
+                              <th>Edge</th>
+                              <th>Safari</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>&lt;abbr&gt;</td>
+                              <td>Yes</td>
+                              <td>Yes</td>
+                              <td>Yes</td>
+                              <td>Yes</td>
+                              <td>Yes</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <p>Global Attributes:</p>
+                        <p>The &lt;abbr&gt; tag supports the Global Attributes in HTML.</p>
+                        <p>Event Attributes:</p>
+                        <p>The &lt;abbr&gt; tag supports the Event Attributes in HTML.</p>
+                        <p>More Examples:</p>
+                        <p>The &lt;abbr&gt; tag can also be used with &lt;dfn&gt; to define an abbreviation:</p>
+                        <p><dfn><abbr title="Cascading Style Sheets">CSS</abbr></dfn> is a language that describes the style of an HTML document.</p>
+                        <p>Related Pages:</p>
+                        <p>HTML DOM reference: Abbreviation Object</p>
+                        <p>Default CSS Settings:</p>
+                        <p>Most browsers will display the &lt;abbr&gt; element with the following default values:</p>
+                        <pre>{`abbr {
+              display: inline;
+            }`}</pre>
+                      </div>
+                    )
       case '<acronym>':
           // Return JSX explaining the acronym tag and providing an example
           return (
-              <div>
-                  <p>This is an abbreviation or acronym, typically styled differently.</p>
-                  <p>Example:</p>
-                  <p>{'<acronym title="Asynchronous JavaScript And XML">AJAX</acronym>'}</p>
-              </div>
+                    <div>
+              <p>Deprecated: This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes. Avoid using it, and update existing code if possible; see the compatibility table at the bottom of this page to guide your decision. Be aware that this feature may cease to work at any time.</p>
+              <p>The &lt;acronym&gt; HTML element allows authors to clearly indicate a sequence of characters that compose an acronym or abbreviation for a word.</p>
+              <p>Warning: Don't use this element. Use the &lt;abbr&gt; element instead.</p>
+              <p>Attributes:</p>
+              <p>This element only has global attributes, which are common to all elements.</p>
+              <p>DOM Interface:</p>
+              <p>This element implements the HTMLElement interface.</p>
+              <p>Examples:</p>
+              <p>HTML:</p>
+              <pre>{`<p>
+    The &lt;acronym title="World Wide Web"&gt;WWW&lt;/acronym&gt; is only a component of the
+    Internet.
+  </p>`}</pre>
+              <p>Result:</p>
+              <p>The <acronym title="World Wide Web">WWW</acronym> is only a component of the Internet.</p>
+              <p>Default styling:</p>
+              <p>Though the purpose of this tag is purely for the convenience of the author, its default styling varies from one browser to another:</p>
+              <ul>
+                <li>Opera, Firefox, Chrome, and some others add a dotted underline to the content of the element.</li>
+                <li>A few browsers not only add a dotted underline, but also put it in small caps; to avoid this styling, adding something like font-variant: none in the CSS takes care of this case.</li>
+              </ul>
+              <p>It is therefore recommended that web authors either explicitly style this element, or accept some cross-browser variation.</p>
+              <p>Specifications:</p>
+              <p>HTML Standard</p>
+              <p>Browser Compatibility:</p>
+              <p>... (Compatibility data)</p>
+              <p>See also:</p>
+              <p>The &lt;abbr&gt; HTML element</p>
+            </div>
           );
        
           case '<address>':
