@@ -1,2 +1,1 @@
-# Example ads.txt file
 google.com, pub-8250424521577970, DIRECT, f08c47fec0942fa0
