@@ -115,11 +115,11 @@ const Resources = () => {
     },
   ];
   return (
-    <div id='Resources' className="resources-container">
+    <div id='Resources' className="resources-container" >
       <h2>Developer Resources</h2>
       <div className="resources-list">
         {resourcesData.map((resource, index) => (
-          <ResourceItem key={index} {...resource} />
+           <ResourceItem key={index} {...resource} />
         ))}
       </div>
     </div>

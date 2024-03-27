@@ -42,31 +42,31 @@ const Header = () => {
           <div className="bar"></div>
         </div>
         <ul>
-          <li>
-            <NavLink to="/HtmlTag" onClick={closeMobileMenu}>HTML Tags</NavLink>
-          </li>
-          <li>
-            <NavLink to="/ColorGenerator" onClick={closeMobileMenu}>Color Generator</NavLink>
-          </li>
-          <li>
-            <NavLink to="/TrendingColor" onClick={closeMobileMenu}>Trending Color</NavLink>
-          </li>
-          <li>
-            <NavLink to="/ImageGenerator" onClick={closeMobileMenu}>Image Generator</NavLink>
-          </li>
-          <li>
-            <NavLink to="/HTMLCourses" onClick={closeMobileMenu}>HTML Courses</NavLink>
-          </li>
-          <li>
-            <NavLink to="/Resources" onClick={closeMobileMenu}>Dev Resources</NavLink>
-          </li>
-          <li>
-            <NavLink to="/programingblog" onClick={closeMobileMenu}>Blog</NavLink>
-          </li>
-          <li>
-            <NavLink to="/login" onClick={closeMobileMenu}>Log In</NavLink>
-          </li>
-        </ul>
+      <li>
+        <NavLink to="/HtmlTag" onClick={closeMobileMenu} title="HTML Tags">HTML Tags</NavLink>
+      </li>
+      <li>
+        <NavLink to="/ColorGenerator" onClick={closeMobileMenu} title="Color Generator">Color Generator</NavLink>
+      </li>
+      <li>
+        <NavLink to="/TrendingColor" onClick={closeMobileMenu} title="Trending Color">Trending Color</NavLink>
+      </li>
+      <li>
+        <NavLink to="/ImageGenerator" onClick={closeMobileMenu} title="Image Generator">Image Generator</NavLink>
+      </li>
+      <li>
+        <NavLink to="/HTMLCourses" onClick={closeMobileMenu} title="HTML Courses">HTML Courses</NavLink>
+      </li>
+      <li>
+        <NavLink to="/Resources" onClick={closeMobileMenu} title="Development Resources">Development Resources</NavLink>
+      </li>
+      <li>
+        <NavLink to="/programingblog" onClick={closeMobileMenu} title="Programming Blog">Programming Blog</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login" onClick={closeMobileMenu} title="Log In">Log In</NavLink>
+      </li>
+    </ul>
       </nav>
     </header>
   );
