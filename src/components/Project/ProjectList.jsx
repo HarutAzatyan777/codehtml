@@ -14,14 +14,14 @@ const ProjectList = () => {
     },
     {
       title: 'Color Generator',
-      description: 'Customize your site\'s design with a lightning-fast color generator.',
+      description: 'Customize your sites design with a lightning-fast color generator.',
       imageUrl: 'projectlist/colorgenerator.web',
       projectUrl: 'https://htmltagss.com/ColorGenerator',
       alt: 'Color Generator'
     },
     {
       title: 'Trending Color',
-      description: 'Explore trending colors and enhance your website\'s visual appeal.',
+      description: 'Explore trending colors and enhance your websites visual appeal.',
       imageUrl: 'projectlist/trend.web',
       projectUrl: 'https://htmltagss.com/TrendingColor',
       alt: 'Trending Color'
