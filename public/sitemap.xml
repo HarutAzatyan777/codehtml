@@ -28,11 +28,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://htmltagss.com/get-started</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://htmltagss.com/TrendingColor</loc>
     <changefreq>weekly</changefreq>

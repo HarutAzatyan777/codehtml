@@ -1,7 +1,47 @@
-User-agent: Yandex
-Disallow:
+# Professional SEO Strategy for robots.txt
 
-User-agent: *
-Disallow:
+# Allow all robots to access the website's main content.
+User-Agent: *
+Allow: /
 
+# Block access to specific directories or files that don't need to be crawled.
+Disallow: /ads/preferences/
+Disallow: /dtt/k
+Disallow: /static/glade/
+Disallow: /tag/js/
+
+# Define the location of the sitemap file for better crawling and indexing.
 Sitemap: https://htmltagss.com/sitemap.xml
+
+# Specify directives for major search engine crawlers.
+
+# Googlebot directives
+User-Agent: Googlebot
+Allow: /
+Disallow: /ads/preferences/
+Disallow: /dtt/k
+Disallow: /static/glade/
+Disallow: /tag/js/
+Crawl-delay: 5  # Optional: Add a crawl delay to reduce server load
+
+# Bingbot directives
+User-Agent: Bingbot
+Allow: /
+Disallow: /ads/preferences/
+Disallow: /dtt/k
+Disallow: /static/glade/
+Disallow: /tag/js/
+Crawl-delay: 5  # Optional: Add a crawl delay to reduce server load
+
+# Yandex directives
+User-Agent: Yandex
+Allow: /
+Disallow: /ads/preferences/
+Disallow: /dtt/k
+Disallow: /static/glade/
+Disallow: /tag/js/
+Crawl-delay: 5  # Optional: Add a crawl delay to reduce server load
+
+# Noindex directive for all robots to avoid indexing any pages.
+# This can help prevent duplicate content issues and focus indexing efforts on important pages.
+Noindex: /
