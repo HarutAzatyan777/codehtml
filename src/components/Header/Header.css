@@ -70,7 +70,7 @@
 }
 
 /* Mobile menu styles */
-@media (max-width: 885px) {
+@media (max-width: 1285px) {
   .menu-icon {
     display: block;
   }
