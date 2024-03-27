@@ -22,7 +22,6 @@ Disallow: /ads/preferences/
 Disallow: /dtt/k
 Disallow: /static/glade/
 Disallow: /tag/js/
-Crawl-delay: 5  # Optional: Add a crawl delay to reduce server load
 
 # Bingbot directives
 User-Agent: Bingbot
