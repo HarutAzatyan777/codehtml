@@ -1,34 +1,26 @@
-
-
 import React from 'react';
-import './Resources.css'
-
-const ResourceItem = ({ title, description, link, image }) => (
-  <div className="resource-item">
-    <img src={image} alt={title} className='resource-img' />
-    <h3>{title}</h3>
-    <p>{description}</p>
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      Learn More
-    </a>
-  </div>
-);
+import ResourceItem from './ResourceItem';
+import "./Resources.css";
 
 const Resources = () => {
   const resourcesData = [
-    //1
     {
       title: 'React Documentation',
       description: 'Official documentation for React.js. A must-read for React developers.',
       link: 'https://reactjs.org/',
       image: 'Resource/React.webp',
+      alt: 'React Documentation',
+      filename: 'react-documentation.webp',
+      keywords: 'React.js, documentation, React developers',
     },
-    //2
     {
       title: 'MDN Web Docs',
       description: 'Comprehensive documentation on web technologies including HTML, CSS, and JavaScript.',
       link: 'https://developer.mozilla.org/',
       image: 'Resource/Mdm.png',
+      alt: 'MDN Web Docs',
+      filename: 'mdn-web-docs.png',
+      keywords: 'MDN, web technologies, HTML, CSS, JavaScript',
     },
     //3
     {
@@ -122,9 +114,8 @@ const Resources = () => {
       image: 'Resource/Three.png',
     },
   ];
-
   return (
-    <div id='Recurces' className="resources-container">
+    <div id='Resources' className="resources-container">
       <h2>Developer Resources</h2>
       <div className="resources-list">
         {resourcesData.map((resource, index) => (
@@ -136,8 +127,3 @@ const Resources = () => {
 };
 
 export default Resources;
-
-
-
-
-

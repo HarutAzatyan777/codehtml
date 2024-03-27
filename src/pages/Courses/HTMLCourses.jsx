@@ -10,7 +10,8 @@ const HTMLCourses = () => {
         <p>Explore our HTML courses and tutorials to master the fundamentals and advanced techniques of HTML.</p>
       <div className='courses-text'>
         
-        <img src="Courses/courses.web" alt="HTML Fundamentals" className='img1-courses' />
+      <img src="Courses/courses.web" alt="HTML Fundamentals" className='img1-courses' title="HTML Fundamentals Course - HTML School" />
+
        <div className='section-text-courses'>
        
         <ul>
@@ -39,13 +40,14 @@ const HTMLCourses = () => {
           videoSrc="https://www.youtube.com/watch?v=VIDEO_ID"
         />
    </div>
-                <img src="Courses/courses1.web" alt="HTML Course Videos" className='img2-courses' />
+   <img src="Courses/courses1.web" alt="HTML Course Videos" className='img2-courses' title="HTML Course Videos - HTML School" />
+
 
       </div>
       <h2>Free HTML Courses and Tutorials</h2>
       <div className='free-html-courses'>
-        <img src="Courses/courses2.web" alt="Free HTML Courses and Tutorials" className='img3-courses' />
-       
+      <img src="Courses/courses2.web" alt="Free HTML Courses and Tutorials" className='img3-courses' title="Free HTML Courses and Tutorials - HTML School" />
+
     <div className='section-text-3'>
     <p>Check out these free resources to enhance your HTML skills:</p>
         <ul>

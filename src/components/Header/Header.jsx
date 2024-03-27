@@ -32,7 +32,8 @@ const Header = () => {
     <header className={`main-header ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
       <div className="logo-container">
         <NavLink to="/">
-          <img src="Logo1.svg" alt="Logo" className="logo" />
+        <img src="Logo1.svg" alt="Logo" className="logo" title="HTML Tools: Color Generator, Tags, Courses, and Trending Colors | HTML School" />
+
         </NavLink>
       </div>
       <nav className={`main-navigation ${mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
