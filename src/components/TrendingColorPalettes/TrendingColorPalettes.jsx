@@ -9,7 +9,11 @@ const TrendingColorPalettes = ({ palettes }) => {
 
   return (
     <div className="trending-color-palettes">
+      
       <h2>Trending Color Palettes</h2>
+      <p className='seo-text'>
+           Discover trending color palettes for your design projects. Explore a curated collection of color combinations to inspire your next project. From vibrant hues to soothing shades, find the perfect palette to elevate your designs.
+       </p>
       <div className="palettes-container">
         {palettes.map((palette, index) => (
           <div key={index} className="palette">

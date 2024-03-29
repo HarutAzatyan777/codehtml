@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import html2canvas from 'html2canvas'; // Import html2canvas library
 import './ColorGenerator.css';
-import TrendingColorPalettes from '../../components/TrendingColorPalettes/TrendingColorPalettes';
 
 const ColorGenerator = () => {
   const [selectedColors, setSelectedColors] = useState([
@@ -11,12 +11,6 @@ const ColorGenerator = () => {
     '#00b4d8', // Magenta
     '#caf0f8'  // Cyan
   ]);
-  const [randomColorIndex, setRandomColorIndex] = useState(0);
-
-  useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * selectedColors.length);
-    setRandomColorIndex(randomIndex);
-  }, []); // Empty dependency array ensures this effect runs only once, during initialization
 
   // Function to update RGB values when the color changes
   const updateRgbValues = (index, newColor) => {
@@ -74,52 +68,60 @@ const ColorGenerator = () => {
     setSelectedColors(newSelectedColors);
   };
 
+  // Function to handle screenshot button click
+  const handleScreenshot = () => {
+    // Take screenshot logic using html2canvas
+    const colorSection = document.querySelector('.color-section');
+    html2canvas(colorSection).then(canvas => {
+      // Convert canvas to image and download it
+      const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+      const link = document.createElement('a');
+      link.download = 'color_palette.png';
+      link.href = image;
+      link.click();
+    });
+  };
+
   useEffect(() => {
-    // Scroll to the top when the page is rendered
-    window.scrollTo(0, 0);
-  }, [])
-
-
+    // Randomize colors when the component mounts
+    const randomColors = selectedColors.map(color => {
+      return '#' + Math.floor(Math.random()*16777215).toString(16); // Generating a random hex color
+    });
+    setSelectedColors(randomColors);
+  }, []); // Empty dependency array ensures this effect runs only once, during initialization
 
   return (
     <div className='color-generator-container'>
-  
       <div className='color-section'>
-        
         {selectedColors.map((color, index) => (
-    
-           <div key={index} className='color-generator' >
-          
+          <div key={index} className='color-generator'>
             <div className='color-preview' style={{ backgroundColor: `${color}` }} onClick={() => handleColorClick(index)}>
+              <h1 className='color-title'>{color}</h1>
+              <img src="iconchange.svg" alt="Image" className='change-svg' />
+            </div>
          
-            <h1 className='color-title' >
-              {color}
-            </h1>
-  <img src="iconchange.svg" alt="Image" className='change-svg' />
-
-</div>
-   <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
-              Copy 
-            </button>
-            <label className='color-label'>
-            </label>
+         
+            <label className='color-label'></label>
             <br />
             <label className='alpha-label'>
               Choose alpha (0 to 1):
               <input className='alpha-input' type="number" step="0.01" min="0" max="1" value={1} onChange={(event) => handleAlphaChange(event, index)} />
             </label>
             <br />
-        
-            <p className='rgb-values'>{getRgbValues(color)}</p>
+            
+            {/* <p className='rgb-values'>{getRgbValues(color)}</p> */}
             <input className='color-input' type="color" value={color} onChange={(event) => handleColorChange(event, index)} />
+            <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
+              Copy
+            </button>
           </div>
-
+          
         ))}
+        
       </div>
-      <div className='trend'>
-      
-
-      </div>
+      <button className='screenshot-button' onClick={handleScreenshot}>
+              Screenshot
+            </button>
     </div>
   );
 };

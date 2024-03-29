@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import TagInfoPanel from '../TagInfoPanel';
 import './HtmlTag.css';
+import Modal from '../Model/Modal';
 
 
 const HtmlPage = () => {
@@ -12,8 +13,18 @@ const HtmlPage = () => {
   });
 
   const [selectedTag, setSelectedTag] = useState(null);
-
   const [searchTerm, setSearchTerm] = useState('');
+  const [modalImageUrl, setModalImageUrl] = useState(null);
+
+  const openModal = (imageUrl) => {
+    setModalImageUrl(imageUrl);
+  };
+
+  const closeModal = () => {
+    setModalImageUrl(null);
+  };
+
+
 
   const toggleSection = (section) => {
     setSections((prevSections) => ({
@@ -28,6 +39,11 @@ const HtmlPage = () => {
    
   };
 
+  const openImageInModal = (imageUrl) => {
+    console.log('Image clicked:', imageUrl);
+    setModalImageUrl(imageUrl);
+  };
+  
 
 
   useEffect(() => {
@@ -178,6 +194,8 @@ const HtmlPage = () => {
   };
 
   return (
+    <div>
+
     <div className="container">
       <div className="section-content">
         <h1>HTML References</h1>
@@ -193,7 +211,7 @@ const HtmlPage = () => {
 
 <div>
 
-        <h2 onClick={() => toggleSection('tags')}>HTML Tags</h2>
+        <h2 onClick={() => toggleSection('tags')} className='tag-h2'>HTML Tags</h2>
         {sections.tags && (
           <div className="section-content">
             {/* Display filtered HTML tags */}
@@ -208,6 +226,7 @@ const HtmlPage = () => {
           </div>
           
         )}
+ 
 </div>
 
 
@@ -218,8 +237,48 @@ const HtmlPage = () => {
    
       <div className="side-panel">
         <TagInfoPanel selectedTag={selectedTag}  />
-
       </div>
+    </div>
+    <div >
+    <div className="tags-img">
+      {/* Your existing content */}
+
+      {/* Modal */}
+      {modalImageUrl && (
+        <Modal imageUrl={modalImageUrl} closeModal={closeModal} />
+      )}
+
+<img
+  src="HtmlTags/htmltags.web"
+  alt="HTML Tags"
+  title="HTML Tags - HTML School"
+  className="img-tag1"
+  onClick={() => openImageInModal('HtmlTags/htmltags.web')}
+/>
+<img
+  src="HtmlTags/htmltagslist.web"
+  alt="List of HTML Tags"
+  title="List of HTML Tags - HTML School"
+  className="img-tag2"
+  onClick={() => openImageInModal('HtmlTags/htmltagslist.web')}
+/>
+<img
+  src="HtmlTags/tabletags.web"
+  alt="HTML Table Tags"
+  title="HTML Table Tags - HTML School"
+  className="img-tag2"
+  onClick={() => openImageInModal('HtmlTags/tabletags.web')}
+/>
+<img
+  src="HtmlTags/layoutelemnt.web"
+  alt="HTML Layout Elements"
+  title="HTML Layout Elements - HTML School"
+  className="img-tag2"
+  onClick={() => openImageInModal('HtmlTags/layoutelemnt.web')}
+/>
+
+    </div>
+        </div>
     </div>
   );
 };

@@ -1719,13 +1719,18 @@ default:
 
   
     return (
+        <div>
         <div className="tag-info-panel">
           <h3>{selectedTag}</h3>
           {getTagInfo(selectedTag)}
     
           {/* Example of copied state */}
           {isCopied && <div>Copied!</div>}
+        
         </div>
+     
+        </div>
+            
       );
     };
     

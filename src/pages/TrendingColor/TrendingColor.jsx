@@ -89,9 +89,13 @@ const examplePalettes = [
 
 function TrendingColor() {
   return (
+    <div className='trending-container'>
+
     <div className='trending-color'>
        <TrendingColorPalettes palettes={examplePalettes} /> 
     </div>
+    </div>
+       
   )
 }
 
