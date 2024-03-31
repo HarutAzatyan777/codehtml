@@ -2,10 +2,13 @@ import React from 'react';
 import './HTMLCourses.css'; // Import the CSS file
 import HTMLQuiz from './HTMLQuiz';
 import HtmlCourseVideo from './HtmlCourseVideo'; // Import the HtmlCourseVideo component
+import MapCourses from './MapCorces.jsx';
 
 const HTMLCourses = () => {
   return (
     <div className="container-courses"> 
+    <MapCourses />
+
     <h1>HTML Courses</h1>
         <p>Explore our HTML courses and tutorials to master the fundamentals and advanced techniques of HTML.</p>
       <div className='courses-text'>

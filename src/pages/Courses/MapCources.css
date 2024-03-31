@@ -1,0 +1,62 @@
+.map-courses-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    font-size: 52px;
+    margin: 10px 0;
+text-align: center;    
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .course-list,
+  .course-video,
+  .free-courses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 24px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .course-list ul,
+  .free-courses ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .course-list li,
+  .free-courses li {
+    font-size: 24px;
+    align-self: center;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 50%;
+  }
+  
+  /* Example animation */
+  .course-list li,
+  .free-courses li {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .course-list li:hover,
+  .free-courses li:hover {
+    transform: scale(1.05);
+  }
+  
+  .course-video iframe {
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  

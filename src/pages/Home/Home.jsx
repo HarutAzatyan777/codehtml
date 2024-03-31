@@ -16,7 +16,7 @@ const Home = () => {
       <Helmet>
         <title>HTML School - Learn HTML the Easy Way</title>
         <meta name="description" content="Master HTML with our comprehensive courses. Expert instructors, interactive learning, and flexible options. Join us today!" />
-      </Helmet>
+      </Helmet> 
 
       <div className='html-home'>
         <div className='welcome'>
