@@ -41,6 +41,3 @@ Disallow: /static/glade/
 Disallow: /tag/js/
 Crawl-delay: 5  # Optional: Add a crawl delay to reduce server load
 
-# Noindex directive for all robots to avoid indexing any pages.
-# This can help prevent duplicate content issues and focus indexing efforts on important pages.
-Noindex: /
