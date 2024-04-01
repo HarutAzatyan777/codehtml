@@ -1,8 +1,8 @@
 import React from 'react';
 import './HTMLCourses.css'; // Import the CSS file
-import HTMLQuiz from './HTMLQuiz';
-import HtmlCourseVideo from './HtmlCourseVideo'; // Import the HtmlCourseVideo component
-import MapCourses from './MapCorces.jsx';
+import HTMLQuiz from '../Quiz/HTMLQuiz';
+import HtmlCourseVideo from '../HtmlVideo/HtmlCourseVideo'; // Import the HtmlCourseVideo component
+import MapCourses from '../Map/MapCources';
 
 const HTMLCourses = () => {
   return (

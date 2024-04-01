@@ -1,0 +1,76 @@
+.map-courses-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.course-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.course-video,
+.free-courses {
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.course-video iframe {
+  width: 100%;
+  height: 315px; /* Adjust height as needed */
+}
+
+.free-courses ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.free-courses li {
+  margin-bottom: 10px; /* Adjust margin as needed */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add styles for images */
+.img-map,
+.img-arg,
+.img-geo {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+/* Add styles for anchor elements */
+.a-map,
+.a-ars,
+.a-geo {
+  text-decoration: none;
+  color: #007bff; /* Adjust color as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.a-map:hover,
+.a-ars:hover,
+.a-geo:hover {
+
+  text-decoration: underline;
+}

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // Import components
 import Home from './pages/Home/Home';
 import HtmlTag from './pages/Html/HtmlTag/HtmlTag';
-import HTMLCourses from './pages/Courses/HTMLCourses';
+import HTMLCourses from './pages/Courses/Home/HTMLCourses';
 import ColorGenerator from './pages/ColorGenerator/ColorGenerator';
 import ImageGenerator from './pages/ImageGenerator/ImageGenerator';
 

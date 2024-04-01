@@ -9,25 +9,25 @@ const MapCourses = () => {
         <h2>Featured Courses</h2>
         <ul>
           <li>
-            <a href="https://developers.google.com/maps/documentation">
+            <a href="https://developers.google.com/maps/documentation" className='a-map' title="Introduction to Google Maps API - Google Developers">
               Introduction to Google Maps API - Google Developers
             </a>
             <p>
               This comprehensive course offered by Google Developers introduces you to the Google Maps API, allowing you to integrate dynamic maps into your web and mobile applications. You'll learn how to display maps, customize map appearance, add markers, overlays, and much more. Whether you're a beginner or an experienced developer, this course will equip you with the skills to leverage the power of Google Maps in your projects.
             </p>
-            <img src="Courses/map.jpg" />
+            <img src="Courses/map.jpg" className='img-map' alt="Google Maps API" title="Google Maps API" />
           </li>
           <li>
-            <a href="https://developers.arcgis.com/documentation/">
+            <a href="https://developers.arcgis.com/documentation/" className='a-ars' title="ArcGIS Developer Documentation - Esri">
               ArcGIS Developer Documentation - Esri
             </a>
-            <img src="Courses/ars.png" alt="ArcGIS Developer Documentation" />
+            <img src="Courses/ars.png" alt="ArcGIS Developer Documentation" className='img-arg' title="ArcGIS Developer Documentation" />
           </li>
           <li>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API">
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API" className='a-geo' title="Geolocation API - MDN Web Docs">
               Geolocation API - MDN Web Docs
+            <img src="Courses/geolocation.web" className='img-geo' alt="Geolocation API" title="Geolocation API" />
             </a>
-            <img src="https://developer.mozilla.org/static/img/web-docs-sprite.22a6a085fc21.svg" alt="Geolocation API" />
           </li>
         </ul>
       </div>
@@ -40,8 +40,8 @@ const MapCourses = () => {
       <div className="free-courses">
         <h2>Free Courses</h2>
         <ul>
-          <li><a href="https://developer.apple.com/documentation/corelocation">Core Location Framework - Apple Developer Documentation</a></li>
-          <li><a href="https://developers.arcgis.com/documentation/analysis/">Spatial Analysis - ArcGIS Developer Documentation</a></li>
+          <li><a href="https://developer.apple.com/documentation/corelocation" title="Core Location Framework - Apple Developer Documentation">Core Location Framework - Apple Developer Documentation</a></li>
+          <li><a href="https://developers.arcgis.com/documentation/analysis/" title="Spatial Analysis - ArcGIS Developer Documentation">Spatial Analysis - ArcGIS Developer Documentation</a></li>
         </ul>
       </div>
     </div>
