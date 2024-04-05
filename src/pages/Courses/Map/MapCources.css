@@ -1,3 +1,4 @@
+/* Styles for desktop */
 .map-courses-container {
   display: flex;
   flex-direction: column;
@@ -9,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 20px; /* Adjust margin as needed */
+  margin-bottom: 20px;
 }
 
 .course-list ul {
@@ -23,17 +24,23 @@
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-bottom: 10px; /* Adjust margin as needed */
+  margin-bottom: 10px;
 }
-
+.course-list p {
+  width: 50%;
+}
 .course-video,
 .free-courses {
-  margin-bottom: 20px; /* Adjust margin as needed */
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 20px;
 }
 
 .course-video iframe {
   width: 100%;
-  height: 315px; /* Adjust height as needed */
+  height: 315px;
 }
 
 .free-courses ul {
@@ -42,12 +49,11 @@
 }
 
 .free-courses li {
-  margin-bottom: 10px; /* Adjust margin as needed */
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
 }
 
-/* Add styles for images */
 .img-map,
 .img-arg,
 .img-geo {
@@ -56,12 +62,11 @@
   height: auto;
 }
 
-/* Add styles for anchor elements */
 .a-map,
 .a-ars,
 .a-geo {
   text-decoration: none;
-  color: #007bff; /* Adjust color as needed */
+  color: #007bff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,6 +76,19 @@
 .a-map:hover,
 .a-ars:hover,
 .a-geo:hover {
-
   text-decoration: underline;
+}
+
+/* Styles for mobile */
+@media screen and (max-width: 768px) {
+  .course-video,
+  .free-courses {
+    width: 100%;
+  }
+
+  .img-map,
+  .img-arg,
+  .img-geo {
+    max-width: 900%;
+  }
 }

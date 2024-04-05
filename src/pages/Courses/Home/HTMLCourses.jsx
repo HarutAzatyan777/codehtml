@@ -7,7 +7,7 @@ import MapCourses from '../Map/MapCources';
 const HTMLCourses = () => {
   return (
     <div className="container-courses"> 
-    <MapCourses />
+
 
     <h1>HTML Courses</h1>
         <p>Explore our HTML courses and tutorials to master the fundamentals and advanced techniques of HTML.</p>
@@ -61,6 +61,7 @@ const HTMLCourses = () => {
         </ul>
     </div>
       </div>
+      <MapCourses />
       <HTMLQuiz />
     </div>
   );

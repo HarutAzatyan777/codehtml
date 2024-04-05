@@ -23,6 +23,8 @@
 
 }
 
+
+
 .html-home-2 {
   
 }
@@ -127,6 +129,7 @@ gap: 50px;
   display: flex;
   font-size: 52px;
   justify-content: center;
+  text-align: center;
   align-items: center;
   font-family: 'LexendExa-VariableFont_wght', Arial, sans-serif;
 }
