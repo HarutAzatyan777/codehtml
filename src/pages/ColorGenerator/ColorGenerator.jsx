@@ -11,34 +11,13 @@ const ColorGenerator = () => {
     '#00b4d8', // Magenta
     '#caf0f8'  // Cyan
   ]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   // Function to update RGB values when the color changes
   const updateRgbValues = (index, newColor) => {
     const updatedColors = [...selectedColors];
     updatedColors[index] = newColor;
     setSelectedColors(updatedColors);
-  };
-
-  // Function to get RGB values from a hex color
-  function getRgbValues(hexColor) {
-    const hex = hexColor.substring(1); // Remove the hash
-    const bigint = parseInt(hex, 16);
-    const r = (bigint >> 16) & 255;
-    const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
-    return `RGB: ${r}, ${g}, ${b}`;
-  }
-
-  // Function to handle color input change
-  const handleColorChange = (event, index) => {
-    const newColor = event.target.value;
-    updateRgbValues(index, newColor);
-  };
-
-  // Function to handle alpha input change
-  const handleAlphaChange = (event, index) => {
-    const newAlpha = parseFloat(event.target.value);
-    // Handle alpha value change here if needed
   };
 
   // Function to handle copy button click
@@ -82,6 +61,19 @@ const ColorGenerator = () => {
     });
   };
 
+  // Function to handle adding a new color
+  const addColor = () => {
+    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generating a random hex color
+    setSelectedColors([...selectedColors, randomColor]);
+  };
+
+  // Function to handle removing a color
+  const removeColor = (index) => {
+    const updatedColors = [...selectedColors];
+    updatedColors.splice(index, 1);
+    setSelectedColors(updatedColors);
+  };
+
   useEffect(() => {
     // Randomize colors when the component mounts
     const randomColors = selectedColors.map(color => {
@@ -94,34 +86,49 @@ const ColorGenerator = () => {
     <div className='color-generator-container'>
       <div className='color-section'>
         {selectedColors.map((color, index) => (
-          <div key={index} className='color-generator'>
+          <div 
+            key={index} 
+            className='color-generator' 
+            onMouseEnter={() => setHoveredIndex(index)} 
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
             <div className='color-preview' style={{ backgroundColor: `${color}` }} onClick={() => handleColorClick(index)}>
               <h1 className='color-title'>{color}</h1>
               <img src="iconchange.svg" alt="Image" className='change-svg' />
             </div>
-         
-         
-            <label className='color-label'></label>
-            <br />
-            <label className='alpha-label'>
-              Choose alpha (0 to 1):
-              <input className='alpha-input' type="number" step="0.01" min="0" max="1" value={1} onChange={(event) => handleAlphaChange(event, index)} />
-            </label>
-            <br />
-            
-            {/* <p className='rgb-values'>{getRgbValues(color)}</p> */}
-            <input className='color-input' type="color" value={color} onChange={(event) => handleColorChange(event, index)} />
-            <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
-              Copy
-            </button>
+            {hoveredIndex === index && (
+              <div className="color-menu">
+                          <button className='remove-color-button' onClick={() => removeColor(index)}>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+
+                </button>
+                <button className='add-color-button' onClick={addColor}>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+  </svg>
+</button>
+                <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
+                  Copy
+                </button>
+      
+                <input
+                  className='color-input'
+                  type="color"
+                  value={selectedColors[index]}
+                  onChange={(event) => updateRgbValues(index, event.target.value)}
+                />
+   
+              </div>
+            )}
           </div>
-          
         ))}
-        
       </div>
       <button className='screenshot-button' onClick={handleScreenshot}>
-              Screenshot
-            </button>
+        Screenshot
+      </button>
+   
     </div>
   );
 };
