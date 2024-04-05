@@ -1,58 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import html2canvas from 'html2canvas'; // Import html2canvas library
+import html2canvas from 'html2canvas';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './ColorGenerator.css';
 
 const ColorGenerator = () => {
   const [selectedColors, setSelectedColors] = useState([
-    '#03045e', // Red
-    '#023e8a', // Green
-    '#0077b6', // Blue
-    '#0096c7', // Yellow
-    '#00b4d8', // Magenta
-    '#caf0f8'  // Cyan
+    '#03045e',
+    '#023e8a',
+    '#0077b6',
+    '#0096c7',
+    '#00b4d8',
+    '#caf0f8'
   ]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Function to update RGB values when the color changes
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Change to whatever breakpoint you want for mobile
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const updateRgbValues = (index, newColor) => {
     const updatedColors = [...selectedColors];
     updatedColors[index] = newColor;
     setSelectedColors(updatedColors);
   };
 
-  // Function to handle copy button click
   const handleCopyToClipboard = (index) => {
-    const colorInfo = ` ${selectedColors[index]}`;
+    const colorInfo = `${selectedColors[index]}`;
     navigator.clipboard.writeText(colorInfo);
   };
 
-  // Function to handle color click and swap with a random color
-  const handleColorClick = (index) => {
-    const newSelectedColors = [...selectedColors];
-  
-    // Get the adjacent indices
-    const adjacentIndices = [];
-    if (index > 0) adjacentIndices.push(index - 1);
-    if (index < selectedColors.length - 1) adjacentIndices.push(index + 1);
-  
-    // Randomly select one of the adjacent indices
-    const randomAdjacentIndex = adjacentIndices[Math.floor(Math.random() * adjacentIndices.length)];
-  
-    // Swap colors
-    const temp = newSelectedColors[index];
-    newSelectedColors[index] = newSelectedColors[randomAdjacentIndex];
-    newSelectedColors[randomAdjacentIndex] = temp;
-  
-    // Update state
-    setSelectedColors(newSelectedColors);
-  };
-
-  // Function to handle screenshot button click
   const handleScreenshot = () => {
-    // Take screenshot logic using html2canvas
     const colorSection = document.querySelector('.color-section');
     html2canvas(colorSection).then(canvas => {
-      // Convert canvas to image and download it
       const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
       const link = document.createElement('a');
       link.download = 'color_palette.png';
@@ -61,74 +50,134 @@ const ColorGenerator = () => {
     });
   };
 
-  // Function to handle adding a new color
+  const generateRandomColor = () => {
+    return '#' + Math.floor(Math.random() * 16777215).toString(16);
+  };
+
   const addColor = () => {
-    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16); // Generating a random hex color
+    const randomColor = generateRandomColor();
     setSelectedColors([...selectedColors, randomColor]);
   };
 
-  // Function to handle removing a color
   const removeColor = (index) => {
     const updatedColors = [...selectedColors];
     updatedColors.splice(index, 1);
     setSelectedColors(updatedColors);
   };
 
-  useEffect(() => {
-    // Randomize colors when the component mounts
-    const randomColors = selectedColors.map(color => {
-      return '#' + Math.floor(Math.random()*16777215).toString(16); // Generating a random hex color
-    });
-    setSelectedColors(randomColors);
-  }, []); // Empty dependency array ensures this effect runs only once, during initialization
+  const onDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const newColors = [...selectedColors];
+    const [reorderedItem] = newColors.splice(result.source.index, 1);
+    newColors.splice(result.destination.index, 0, reorderedItem);
+
+    setSelectedColors(newColors);
+  };
 
   return (
     <div className='color-generator-container'>
-      <div className='color-section'>
-        {selectedColors.map((color, index) => (
-          <div 
-            key={index} 
-            className='color-generator' 
-            onMouseEnter={() => setHoveredIndex(index)} 
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
-            <div className='color-preview' style={{ backgroundColor: `${color}` }} onClick={() => handleColorClick(index)}>
-              <h1 className='color-title'>{color}</h1>
-              <img src="iconchange.svg" alt="Image" className='change-svg' />
-            </div>
-            {hoveredIndex === index && (
-              <div className="color-menu">
-                          <button className='remove-color-button' onClick={() => removeColor(index)}>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>
-
-                </button>
-                <button className='add-color-button' onClick={addColor}>
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-  </svg>
-</button>
-                <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
-                  Copy
-                </button>
-      
-                <input
-                  className='color-input'
-                  type="color"
-                  value={selectedColors[index]}
-                  onChange={(event) => updateRgbValues(index, event.target.value)}
-                />
-   
+      <DragDropContext onDragEnd={onDragEnd}>
+        {isMobile ? (
+          <Droppable droppableId="color-section" direction="vertical">
+            {(provided) => (
+              <div
+                className='color-section'
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                {selectedColors.map((color, index) => (
+                  <Draggable key={index} draggableId={`color-${index}`} index={index}>
+                    {(provided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        className='color-generator'
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                      >
+                        <div className='color-preview' style={{ backgroundColor: color }}>
+                          <h1 className='color-title'>{color}</h1>
+                          {hoveredIndex === index && (
+                            <div className="color-menu">
+                              <button className='remove-color-button' onClick={() => removeColor(index)}>
+                                Remove
+                              </button>
+                              <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
+                                Copy
+                              </button>
+                              <input
+                                className='color-input'
+                                type="color"
+                                value={selectedColors[index]}
+                                onChange={(event) => updateRgbValues(index, event.target.value)}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
               </div>
             )}
-          </div>
-        ))}
-      </div>
+          </Droppable>
+        ) : (
+          <Droppable droppableId="color-section" direction="horizontal">
+            {(provided) => (
+              <div
+                className='color-section'
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                {selectedColors.map((color, index) => (
+                  <Draggable key={index} draggableId={`color-${index}`} index={index}>
+                    {(provided) => (
+                      <div
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        className='color-generator'
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                      >
+                        <div className='color-preview' style={{ backgroundColor: color }}>
+                          <h1 className='color-title'>{color}</h1>
+                          {hoveredIndex === index && (
+                            <div className="color-menu">
+                              <button className='remove-color-button' onClick={() => removeColor(index)}>
+                                Remove
+                              </button>
+                              <button className='copy-button' onClick={() => handleCopyToClipboard(index)}>
+                                Copy
+                              </button>
+                              <input
+                                className='color-input'
+                                type="color"
+                                value={selectedColors[index]}
+                                onChange={(event) => updateRgbValues(index, event.target.value)}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        )}
+      </DragDropContext>
       <button className='screenshot-button' onClick={handleScreenshot}>
         Screenshot
       </button>
-   
+      <button className='add-color-button' onClick={addColor}>
+        Add Color
+      </button>
     </div>
   );
 };

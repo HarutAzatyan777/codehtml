@@ -40,6 +40,14 @@
   margin-bottom: 10px;
   padding: 10px;
 }
+.color-menu{
+  display: flex;
+flex-direction: column;
+align-items: center;
+
+
+}
+
 
 .copy-button {
   padding: 10px 20px;
@@ -51,11 +59,19 @@
   margin: 10px;
 }
 
-
 .copy-button:hover {
   background-color: #0056b3;
 }
-.add-color-button
+
+.add-color-button {
+  width: 50px;
+  height: 50px;
+background-color: chartreuse;
+padding: 5px;
+margin: 10px;
+border-radius: 25px;
+}
+
 .color-preview:hover .color-title,
 .color-preview:hover .change-svg,
 .color-preview:hover .copy-button {
@@ -64,8 +80,6 @@
   align-items: center;
   position: relative;
 }
-
-
 
 .color-preview:hover .color-title {
   width: 50%;
@@ -84,9 +98,11 @@
 .color-preview:hover .copy-button {
   position: relative;
 }
-.add-color-button{
+
+.add-color-button {
   width: 50px;
 }
+
 .svg-icon {
   width: 50px;
 }
@@ -144,8 +160,9 @@
 }
 
 .remove-color-button {
-  width: 50px;
-
+  background-color: red;
+  width: 70px;
+  border-radius:25px ;
 }
 
 /* Mobile size styling */
@@ -167,12 +184,21 @@
 
   .color-preview {
     border-radius: 25px 0 0 25px;
+    flex-direction: row;
     width: 100%; /* Adjusted width for mobile */
     height: 120px; /* Adjusted height for mobile */
     order: 3;
-  }}
+  }
 
-
-  .footer-container{
+  .change-svg{
     display: none;
   }
+
+  .color-menu{
+    flex-direction: row;
+  }
+}
+
+.footer-container {
+  display: none;
+}
