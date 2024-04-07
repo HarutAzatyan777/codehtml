@@ -62,12 +62,5 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- Canonical URL for api.harutdev.com -->
-    <url>
-        <loc>https://api.harutdev.com/</loc>
-        <lastmod>2024-03-18</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
 
 </urlset>
